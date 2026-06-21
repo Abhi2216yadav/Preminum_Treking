@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 1.2%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 28 60% 63%;
+    --primary-foreground: 0 0% 1.2%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 7%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 197 78% 83%;
+    --accent-foreground: 0 0% 1.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 100% / 0.1;
+    --input: 0 0% 100% / 0.1;
+    --ring: 28 60% 63%;
+    --radius: 0px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-[#030303] text-white antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  .btn-amber {
+    @apply bg-[#d79a63] text-[#030303] px-6 py-3 font-medium uppercase text-sm tracking-wider transition-all duration-0 hover:bg-[#e8ab74];
+  }
+
+  .btn-outline {
+    @apply border border-white/20 text-white px-6 py-3 font-medium uppercase text-sm tracking-wider transition-all duration-0 hover:bg-[#d79a63] hover:text-[#030303] hover:border-[#d79a63];
+  }
+
+  .text-micro {
+    @apply text-xs uppercase tracking-widest text-[#9a9a9a];
+  }
+
+  .border-subtle {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-24;
+  }
+
+  .glider-tag {
+    transform: translateZ(-1500px);
+    opacity: 0;
+  }
+
+  .trail-card {
+    transition: transform 0.3s ease;
+    background: #121212;
+  }
+
+  .scanner {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    animation: scan 2s infinite linear;
+    box-shadow: 0 0 10px white;
+  }
+}
+
+@keyframes scan {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030303;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d79a63;
+}
+
+/* Selection */
+::selection {
+  background: #d79a63;
+  color: #030303;
+}

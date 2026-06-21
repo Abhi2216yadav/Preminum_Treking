@@ -1,0 +1,141 @@
+import { useState } from 'react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import ScrollReveal from '../components/ScrollReveal';
+
+export default function Gallery() {
+  const [filter, setFilter] = useState('ALL');
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const filters = ['ALL', 'MOUNTAINS', 'CAMPING', 'SNOW', 'FOREST', 'LAKES', 'SUNRISE', 'TREKKERS'];
+
+  const images = [
+    { src: '/hero-mountain.jpg', alt: 'Himalayan peaks', category: 'MOUNTAINS', span: 'col-span-2 row-span-2' },
+    { src: '/trek-gomukh.jpg', alt: 'GoMukh Glacier', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
+    { src: '/gallery-forest.jpg', alt: 'Rhododendron forest', category: 'FOREST', span: 'col-span-1 row-span-2' },
+    { src: '/gallery-sunrise.jpg', alt: 'Mountain sunrise', category: 'SUNRISE', span: 'col-span-2 row-span-1' },
+    { src: '/gallery-camping.jpg', alt: 'Night camping', category: 'CAMPING', span: 'col-span-2 row-span-2' },
+    { src: '/gallery-lake.jpg', alt: 'Alpine lake', category: 'LAKES', span: 'col-span-1 row-span-1' },
+    { src: '/trek-valley-flowers.jpg', alt: 'Valley of Flowers', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
+    { src: '/gallery-summit.jpg', alt: 'Summit celebration', category: 'TREKKERS', span: 'col-span-2 row-span-1' },
+    { src: '/trek-roopkund.jpg', alt: 'Roopkund Lake', category: 'LAKES', span: 'col-span-1 row-span-1' },
+    { src: '/gallery-snow.jpg', alt: 'Snow trek', category: 'SNOW', span: 'col-span-2 row-span-1' },
+    { src: '/trek-brahmatal.jpg', alt: 'Brahmatal winter', category: 'SNOW', span: 'col-span-1 row-span-1' },
+    { src: '/trek-kuari-pass.jpg', alt: 'Kuari Pass', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
+    { src: '/trek-har-ki-dun.jpg', alt: 'Har Ki Dun valley', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
+    { src: '/hero-gear.jpg', alt: 'Trekking gear', category: 'CAMPING', span: 'col-span-1 row-span-1' },
+    { src: '/trek-tapovan.jpg', alt: 'Tapovan meadows', category: 'MOUNTAINS', span: 'col-span-2 row-span-1' },
+    { src: '/about-hero.jpg', alt: 'Aerial mountain view', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
+    { src: '/gear-flatlay.jpg', alt: 'Essential gear', category: 'CAMPING', span: 'col-span-1 row-span-1' },
+    { src: '/gallery-camping.jpg', alt: 'Starry night camp', category: 'CAMPING', span: 'col-span-1 row-span-1' },
+  ];
+
+  const filteredImages = filter === 'ALL'
+    ? images
+    : images.filter(img => img.category === filter);
+
+  const openLightbox = (index: number) => setLightboxIndex(index);
+  const closeLightbox = () => setLightboxIndex(null);
+  const prevImage = () => setLightboxIndex(prev => prev !== null ? (prev === 0 ? filteredImages.length - 1 : prev - 1) : null);
+  const nextImage = () => setLightboxIndex(prev => prev !== null ? (prev === filteredImages.length - 1 ? 0 : prev + 1) : null);
+
+  return (
+    <>
+      {/* Hero Banner */}
+      <section className="relative h-[30vh] min-h-[250px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src="/gallery-sunrise.jpg" alt="Gallery hero" className="w-full h-full object-cover opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030303] to-transparent" />
+        </div>
+        <div className="relative z-10 text-center section-padding">
+          <ScrollReveal>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight uppercase mb-4">
+              GALLERY
+            </h1>
+            <p className="text-lg text-[#9a9a9a]">Moments from the Himalayas</p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Filter Tabs */}
+      <section className="py-8 bg-[#030303] border-b border-white/10 sticky top-16 lg:top-20 z-40">
+        <div className="section-padding">
+          <div className="flex flex-wrap gap-2">
+            {filters.map((f) => (
+              <button
+                key={f}
+                onClick={() => { setFilter(f); setLightboxIndex(null); }}
+                className={`px-4 py-2 text-xs uppercase tracking-widest border transition-all ${
+                  filter === f
+                    ? 'bg-[#d79a63] text-[#030303] border-[#d79a63]'
+                    : 'bg-transparent text-[#9a9a9a] border-white/20 hover:border-white/40 hover:text-white'
+                }`}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Masonry Grid */}
+      <section className="py-16 bg-[#030303]">
+        <div className="section-padding">
+          <div className="columns-2 md:columns-3 gap-2 space-y-2">
+            {filteredImages.map((img, i) => (
+              <div
+                key={`${img.src}-${filter}`}
+                className="break-inside-avoid group cursor-pointer relative overflow-hidden"
+                onClick={() => openLightbox(i)}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                  <span className="text-xs uppercase tracking-widest text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                    {img.category}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      {lightboxIndex !== null && (
+        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center">
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-white hover:text-[#d79a63] transition-colors z-10"
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <button
+            onClick={prevImage}
+            className="absolute left-4 text-white hover:text-[#d79a63] transition-colors z-10"
+          >
+            <ChevronLeft className="w-8 h-8" />
+          </button>
+          <button
+            onClick={nextImage}
+            className="absolute right-4 text-white hover:text-[#d79a63] transition-colors z-10"
+          >
+            <ChevronRight className="w-8 h-8" />
+          </button>
+          <div className="text-center">
+            <img
+              src={filteredImages[lightboxIndex].src}
+              alt={filteredImages[lightboxIndex].alt}
+              className="max-h-[80vh] max-w-[90vw] object-contain"
+            />
+            <div className="text-micro mt-4">
+              {String(lightboxIndex + 1).padStart(2, '0')} / {String(filteredImages.length).padStart(2, '0')} — {filteredImages[lightboxIndex].alt}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
