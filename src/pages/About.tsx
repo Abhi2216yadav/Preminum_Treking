@@ -9,7 +9,7 @@ export default function About() {
   const stats = [
     { value: '5000+', label: 'HAPPY TREKKERS', icon: Users },
     { value: '10+', label: 'YEARS EXPERIENCE', icon: Clock },
-    { value: '8+', label: 'PREMIUM TREKS', icon: Mountain },
+    { value: '12+', label: 'PREMIUM TREKS', icon: Mountain },
     { value: '98%', label: 'CUSTOMER SATISFACTION', icon: TrendingUp },
   ];
 

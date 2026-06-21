@@ -25,6 +25,9 @@ export default function TrekDetail() {
   }
 
   const relatedTreks = getRelatedTreks(trek.slug, 3);
+  const overviewParagraphs = Array.isArray(trek.overview) ? trek.overview : [trek.overview];
+  const hasFloraFauna = trek.floraFauna || trek.closingSummary;
+  const hasRouteDetails = trek.altitudeProfile || trek.localCulture || trek.majorPeaks;
 
   return (
     <>
@@ -78,9 +81,13 @@ export default function TrekDetail() {
                 <h2 className="text-3xl md:text-4xl font-normal tracking-tight mb-8">
                   OVERVIEW
                 </h2>
-                <p className="text-[#9a9a9a] leading-relaxed mb-8">
-                  {trek.overview}
-                </p>
+                <div className="mb-8 space-y-5">
+                  {overviewParagraphs.map((paragraph, i) => (
+                    <p key={i} className="text-[#9a9a9a] leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
 
                 {/* Highlights */}
                 <div className="mb-8">
@@ -209,6 +216,22 @@ export default function TrekDetail() {
                       <p className="text-sm text-[#9a9a9a] leading-relaxed">
                         {day.description}
                       </p>
+                      {(day.distance || day.duration) && (
+                        <div className="mt-4 flex flex-wrap gap-3">
+                          {day.distance && (
+                            <div className="border border-white/10 px-3 py-2">
+                              <div className="text-micro">DISTANCE</div>
+                              <div className="text-sm text-white">{day.distance}</div>
+                            </div>
+                          )}
+                          {day.duration && (
+                            <div className="border border-white/10 px-3 py-2">
+                              <div className="text-micro">DURATION</div>
+                              <div className="text-sm text-white">{day.duration}</div>
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </ScrollReveal>
@@ -217,6 +240,78 @@ export default function TrekDetail() {
           </div>
         </div>
       </section>
+
+      {/* Route Details */}
+      {hasRouteDetails && (
+        <section className="py-24 bg-[#030303] border-t border-white/10">
+          <div className="section-padding">
+            <ScrollReveal>
+              <div className="text-micro mb-4">REGION DETAILS</div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight mb-16">
+                ROUTE, CULTURE & PEAKS
+              </h2>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {trek.altitudeProfile && (
+                <ScrollReveal>
+                  <div className="bg-[#121212] border border-white/10 p-8 h-full">
+                    <h3 className="text-sm uppercase tracking-wider mb-6">
+                      Campsites and Altitude
+                    </h3>
+                    <div className="divide-y divide-white/10">
+                      {trek.altitudeProfile.map((point) => (
+                        <div key={point.name} className="flex items-center justify-between gap-4 py-3">
+                          <span className="text-sm text-[#9a9a9a]">{point.name}</span>
+                          <span className="text-sm text-[#d79a63] font-mono text-right">
+                            {point.altitude}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </ScrollReveal>
+              )}
+
+              {trek.localCulture && (
+                <ScrollReveal delay={0.1}>
+                  <div className="bg-[#121212] border border-white/10 p-8 h-full">
+                    <h3 className="text-sm uppercase tracking-wider mb-6">
+                      Local Culture
+                    </h3>
+                    <ul className="space-y-3">
+                      {trek.localCulture.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm text-[#9a9a9a]">
+                          <Star className="w-4 h-4 text-[#d79a63] mt-0.5 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
+              )}
+
+              {trek.majorPeaks && (
+                <ScrollReveal delay={0.2}>
+                  <div className="bg-[#121212] border border-white/10 p-8 h-full">
+                    <h3 className="text-sm uppercase tracking-wider mb-6">
+                      Major Peaks on the Trail
+                    </h3>
+                    <ul className="space-y-3">
+                      {trek.majorPeaks.map((peak) => (
+                        <li key={peak} className="flex items-start gap-3 text-sm text-[#9a9a9a]">
+                          <Mountain className="w-4 h-4 text-[#d79a63] mt-0.5 shrink-0" />
+                          {peak}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Cost & Inclusions */}
       <section className="py-24 bg-[#030303] border-t border-white/10">
@@ -290,6 +385,67 @@ export default function TrekDetail() {
           </div>
         </div>
       </section>
+
+      {/* Flora & Fauna */}
+      {hasFloraFauna && (
+        <section className="py-24 bg-[#030303] border-t border-white/10">
+          <div className="section-padding">
+            <ScrollReveal>
+              <div className="text-micro mb-4">MOUNTAIN ECOSYSTEM</div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight mb-16">
+                FLORA & FAUNA
+              </h2>
+            </ScrollReveal>
+
+            {trek.floraFauna && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <ScrollReveal>
+                  <div className="bg-[#121212] border border-white/10 p-8 h-full">
+                    <h3 className="text-sm uppercase tracking-wider mb-6">
+                      Trees Found on the Trek
+                    </h3>
+                    <ul className="space-y-3">
+                      {trek.floraFauna.trees.map((tree, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm text-[#9a9a9a]">
+                          <Star className="w-4 h-4 text-[#d79a63] mt-0.5 shrink-0" />
+                          {tree}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
+
+                <ScrollReveal delay={0.1}>
+                  <div className="bg-[#121212] border border-white/10 p-8 h-full">
+                    <h3 className="text-sm uppercase tracking-wider mb-6">
+                      Wildlife Sightings
+                    </h3>
+                    <ul className="space-y-3">
+                      {trek.floraFauna.wildlife.map((wildlife, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm text-[#9a9a9a]">
+                          <Star className="w-4 h-4 text-[#d79a63] mt-0.5 shrink-0" />
+                          {wildlife}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
+              </div>
+            )}
+
+            {trek.closingSummary && (
+              <ScrollReveal>
+                <div className="bg-[#121212] border border-white/10 p-8">
+                  <div className="text-micro mb-4">CLOSING SUMMARY</div>
+                  <p className="text-[#9a9a9a] leading-relaxed max-w-4xl">
+                    {trek.closingSummary}
+                  </p>
+                </div>
+              </ScrollReveal>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Related Treks */}
       <section className="py-24 bg-[#030303] border-t border-white/10">

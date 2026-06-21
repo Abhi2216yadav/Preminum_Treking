@@ -107,7 +107,7 @@ function HeroSection() {
 function StatsSection() {
   const stats = [
     { value: '5000+', label: 'HAPPY TREKKERS' },
-    { value: '8+', label: 'PREMIUM TREKS' },
+    { value: '12+', label: 'PREMIUM TREKS' },
     { value: '98%', label: 'CUSTOMER SATISFACTION' },
     { value: '10+', label: 'YEARS EXPERIENCE' },
   ];
