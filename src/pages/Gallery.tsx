@@ -15,7 +15,7 @@ export default function Gallery() {
     { src: '/gallery-sunrise.jpg', alt: 'Mountain sunrise', category: 'SUNRISE', span: 'col-span-2 row-span-1' },
     { src: '/gallery-camping.jpg', alt: 'Night camping', category: 'CAMPING', span: 'col-span-2 row-span-2' },
     { src: '/gallery-lake.jpg', alt: 'Alpine lake', category: 'LAKES', span: 'col-span-1 row-span-1' },
-    { src: '/trek-valley-flowers.jpg', alt: 'Valley of Flowers', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
+    { src: '/trek-valley-flowers%20new.jpeg', alt: 'Valley of Flowers', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
     { src: '/gallery-summit.jpg', alt: 'Summit celebration', category: 'TREKKERS', span: 'col-span-2 row-span-1' },
     { src: '/trek-roopkund.jpg', alt: 'Roopkund Lake', category: 'LAKES', span: 'col-span-1 row-span-1' },
     { src: '/gallery-snow.jpg', alt: 'Snow trek', category: 'SNOW', span: 'col-span-2 row-span-1' },
