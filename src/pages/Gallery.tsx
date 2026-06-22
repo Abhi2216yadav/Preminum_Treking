@@ -51,7 +51,7 @@ export default function Gallery() {
     { src: '/trek-chandrashila6.jpg', alt: 'Chandrashila snow trail', category: 'SNOW', span: 'col-span-1 row-span-1' },
     { src: '/trek-brahmatal.jpg', alt: 'Brahmatal winter', category: 'SNOW', span: 'col-span-1 row-span-1' },
     { src: '/trek-kuari-pass.jpg', alt: 'Kuari Pass', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
-    { src: '/trek-har-ki-dun.jpg', alt: 'Har Ki Dun valley', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
+    { src: '/trek-har-ki-dun-new.jpeg', alt: 'Har Ki Dun valley', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
     { src: '/hero-gear.jpg', alt: 'Trekking gear', category: 'CAMPING', span: 'col-span-1 row-span-1' },
     { src: '/trek-tapovan.jpg', alt: 'Tapovan meadows', category: 'MOUNTAINS', span: 'col-span-2 row-span-1' },
     { src: '/about-hero.jpg', alt: 'Aerial mountain view', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
