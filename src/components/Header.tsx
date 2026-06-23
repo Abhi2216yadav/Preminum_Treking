@@ -44,11 +44,12 @@ export default function Header() {
       <div className="section-padding">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <Mountain className="w-6 h-6 text-[#d79a63]" />
-            <span className="text-xl font-medium tracking-tight text-white group-hover:text-[#d79a63] transition-colors">
-              TREKWON
-            </span>
+          <Link to="/" className="flex items-center group">
+            <img
+              src="/trekwon-logo-new.png"
+              alt="TREKWON"
+              className="h-34 lg:h-36 w-auto object-contain group-hover:opacity-80 transition-opacity"
+            />
           </Link>
 
           {/* Desktop Navigation */}

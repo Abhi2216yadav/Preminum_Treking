@@ -63,7 +63,7 @@ export const treks: Trek[] = [
     difficulty: 'Moderate',
     difficultyLevel: 'moderate',
     bestSeason: 'May - Jun, Sep - Oct',
-    price: 12500,
+    price: 13000,
     location: 'Uttarkashi, Uttarakhand',
     overview: 'The GoMukh Tapovan Trek is one of the most rewarding Himalayan pilgrimages for trekkers. Leading to the snout of the Gangotri Glacier — the source of the mighty River Ganges — and the sacred meadows of Tapovan, this trek offers a perfect blend of spirituality and adventure. You will traverse ancient pilgrim trails, cross the mesmerizing Gangotri National Park, camp beside the Bhagirathi River, and witness the majestic Shivling Peak up close from the high-altitude meadows of Tapovan.',
     highlights: [
@@ -122,7 +122,7 @@ export const treks: Trek[] = [
     difficulty: 'Easy-Moderate',
     difficultyLevel: 'easy',
     bestSeason: 'Dec - Apr',
-    price: 7000,
+    price: 12999,
     location: 'Uttarkashi, Uttarakhand',
     overview: [
       'The Kedarkantha Trek is one of Uttarakhand\'s most loved winter summit treks, starting from the beautiful mountain village of Sankri in the Govind Wildlife Sanctuary region. Known for dependable snow, forested trails, and a rewarding summit climb, the route gives beginners a true Himalayan expedition feel without becoming overly technical. From Sankri, the trail gradually rises through quiet villages, pine-scented forests, frozen clearings, and open snowfields before reaching the summit ridge.',
@@ -247,7 +247,7 @@ export const treks: Trek[] = [
     difficulty: 'Moderate-Difficult',
     difficultyLevel: 'difficult',
     bestSeason: 'Mar - Apr, Sep - Nov',
-    price: 10000,
+    price: 10999,
     location: 'Chamoli, Uttarakhand',
     overview: [
       'Pangarchulla Peak Trek is a dramatic summit trek in the Garhwal Himalayas of Uttarakhand, usually beginning from Joshimath and returning to the same mountain town. The route moves through the classic Kuari Pass region, linking high Himalayan villages, dense forests, open campsites, and a final snow-covered summit ridge. At around 15,060 ft, Pangarchulla offers a true peak-climbing feeling without requiring technical mountaineering equipment in normal trekking conditions.',
@@ -405,7 +405,7 @@ export const treks: Trek[] = [
     difficulty: 'Easy-Moderate',
     difficultyLevel: 'easy',
     bestSeason: 'Apr - Jun, Sep - Feb',
-    price: 5500,
+    price: 9500,
     location: 'Uttarkashi, Uttarakhand',
     overview: [
       'Dayara Bugyal Trek is one of Uttarakhand\'s most beautiful meadow treks, known for its vast alpine grasslands, gentle trails, and big Himalayan views. The trek begins from Raithal, a traditional Garhwali village in the Uttarkashi district, and climbs gradually through forest sections, shepherd clearings, and open ridges before reaching the sweeping meadows of Dayara Bugyal at around 11,181 ft.',
@@ -528,7 +528,7 @@ export const treks: Trek[] = [
     difficulty: 'Easy-Moderate',
     difficultyLevel: 'easy',
     bestSeason: 'May - Jun, Sep - Nov',
-    price: 7000,
+    price: 9000,
     location: 'Chamoli, Uttarakhand',
     overview: [
       'The Ali-Bedni Bugyal Trek is one of Uttarakhand\'s finest high-altitude meadow journeys, combining two legendary bugyals in the Garhwal Himalayas. Starting from Lohajung, the route moves through forested valleys, traditional hill villages, and wide open grasslands before reaching the celebrated twin meadows of Ali Bugyal and Bedni Bugyal. At around 11,975 ft, the trek offers a generous Himalayan experience without becoming too technical for fit beginners.',
@@ -677,7 +677,7 @@ export const treks: Trek[] = [
     difficulty: 'Easy-Moderate',
     difficultyLevel: 'easy',
     bestSeason: 'May - Jun, Sep - Oct',
-    price: 6500,
+    price: 10999,
     location: 'Rudraprayag, Uttarakhand',
     overview: [
       'The Kedarnath Trek is one of the most important pilgrimage treks in the Indian Himalayas, beginning from Gaurikund and ending at the sacred Kedarnath Temple. Gaurikund is the final motorable point of the yatra, and from here the trail climbs steadily through mountain settlements, service camps, river valleys, and high-altitude views before reaching the temple at 3,583 m. The route carries both spiritual intensity and a real trekking challenge because the altitude gain is around 1,600 m over a long walking day.',
@@ -820,7 +820,7 @@ export const treks: Trek[] = [
     difficulty: 'Easy-Moderate',
     difficultyLevel: 'easy',
     bestSeason: 'Mar - Jun, Sep - Feb',
-    price: 4500,
+    price: 9999,
     location: 'Rudraprayag, Uttarakhand',
     overview: [
       'The Chopta-Tungnath-Chandrashila Trek is one of Uttarakhand\'s most popular short Himalayan treks, loved for its easy access, sacred trail, and extraordinary summit views. The trek starts from Chopta at around 2,680 m and climbs first to Tungnath, the highest Shiva temple in the world, before continuing to the Chandrashila summit. Even though the walking distance is compact, the route delivers a complete mountain experience with forest, snow, temple culture, and a 360-degree Himalayan panorama.',
@@ -946,7 +946,7 @@ export const treks: Trek[] = [
     difficulty: 'Easy-Moderate',
     difficultyLevel: 'easy',
     bestSeason: 'Jul - Sep',
-    price: 10500,
+    price: 9999,
     location: 'Chamoli, Uttarakhand',
     overview: 'The Valley of Flowers is a UNESCO World Heritage Site that transforms into a kaleidoscope of colors during the monsoon months. Nestled in the Pushpawati River valley, this high-altitude Himalayan valley is home to over 600 species of wildflowers, including the rare Brahma Kamal and the Blue Poppy. Combined with a visit to the sacred Hemkund Sahib Gurudwara at 15,200 feet, this trek offers a unique blend of natural beauty and spiritual significance.',
     highlights: [
@@ -1000,7 +1000,7 @@ export const treks: Trek[] = [
     difficulty: 'Easy',
     difficultyLevel: 'easy',
     bestSeason: 'Mar - Jun, Sep - Dec',
-    price: 9500,
+    price: 10999,
     location: 'Chamoli, Uttarakhand',
     overview: 'The Kuari Pass Trek, also known as the Lord Curzon Trail, is one of the most beginner-friendly treks in the Indian Himalayas. It offers the most spectacular close-up views of India\'s second-highest peak, Nanda Devi (25,643 ft), along with a panorama of other major peaks including Dronagiri, Hathi Parvat, and Nilkanth. The trail passes through charming Himalayan villages, dense oak and rhododendron forests, and vast bugyals (alpine meadows) that make this trek a photographer\'s delight.',
     highlights: [
@@ -1054,7 +1054,7 @@ export const treks: Trek[] = [
     difficulty: 'Moderate-Difficult',
     difficultyLevel: 'difficult',
     bestSeason: 'May - Jun, Sep - Oct',
-    price: 15500,
+    price: 15999,
     location: 'Chamoli, Uttarakhand',
     overview: 'The Roopkund Trek is one of the most fascinating and challenging treks in the Indian Himalayas. The trek leads to the mysterious Roopkund Lake at 16,500 feet, where hundreds of ancient human skeletons are visible at the lake\'s bottom when the snow melts. This high-altitude glacial lake, surrounded by rock-strewn glaciers and snow-clad mountains, has baffled scientists and trekkers alike for decades. The trek also offers views of the mighty Trishul and Nanda Ghunti peaks.',
     highlights: [
@@ -1121,7 +1121,7 @@ export const treks: Trek[] = [
     difficulty: 'Easy-Moderate',
     difficultyLevel: 'easy',
     bestSeason: 'Mar - Jun, Sep - Dec',
-    price: 13500,
+    price: 12999,
     location: 'Uttarkashi, Uttarakhand',
     overview: 'Har Ki Dun, meaning "Valley of Gods," is a cradle-shaped hanging valley in the Garhwal Himalayas. This ancient trek follows the trail taken by the Pandavas from the Mahabharata on their way to heaven. Surrounded by Swargarohini, Bandarpoonch, and Black Peak, the valley offers mesmerizing views of snow-capped peaks, dense pine forests, gushing streams, and charming mountain villages that seem frozen in time. The valley is also a paradise for bird watchers and botanists.',
     highlights: [
@@ -1176,7 +1176,7 @@ export const treks: Trek[] = [
     difficulty: 'Easy',
     difficultyLevel: 'easy',
     bestSeason: 'Dec - Mar',
-    price: 8500,
+    price: 7999,
     location: 'Chamoli, Uttarakhand',
     overview: 'The Brahmatal Trek is one of the best winter treks in Uttarakhand, offering a perfect combination of snow-covered trails, frozen lakes, and majestic Himalayan views. The trek takes you to the pristine Brahmatal Lake at 12,250 feet, believed to be the meditation ground of Lord Brahma. From the summit, you get unobstructed views of Mt. Trishul and Mt. Nanda Ghunti. The trail passes through rhododendron forests, vast snowfields, and offers a unique view of Roopkund and Ali Bugyal from a distance.',
     highlights: [
