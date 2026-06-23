@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Mountain } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { treks } from '../data/treks';
 
 export default function Header() {
