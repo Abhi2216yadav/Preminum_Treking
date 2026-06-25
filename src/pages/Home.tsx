@@ -427,7 +427,7 @@ function BlogPreview() {
     {
       title: 'Best Time to Visit Valley of Flowers',
       category: 'DESTINATIONS',
-      image: '/trek-valley-flowers%20new.jpeg',
+      image: '/trek-valley-flowers new.jpeg',
       date: 'May 28, 2026',
     },
   ];
