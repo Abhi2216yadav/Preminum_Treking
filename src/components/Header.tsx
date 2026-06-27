@@ -51,7 +51,7 @@ export default function Header() {
             <img
               src="/trekwon-logo-new.png"
               alt="TREKWON"
-              className="h-16 lg:h-26 w-auto object-contain group-hover:opacity-80 transition-opacity"
+              className="h-14 lg:h-21 w-auto object-contain group-hover:opacity-80 transition-opacity"
             />
           </Link>
 
