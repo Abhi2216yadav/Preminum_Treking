@@ -1,57 +1,67 @@
+import { useTranslation } from 'react-i18next';
 import { Star, Award, Users, TrendingUp, ThumbsUp } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 
 export default function Testimonials() {
+  const { t } = useTranslation();
+
   const stats = [
-    { value: '4.9/5', label: 'AVERAGE RATING', icon: Star },
-    { value: '500+', label: 'REVIEWS', icon: Users },
-    { value: '98%', label: 'WOULD RECOMMEND', icon: ThumbsUp },
-    { value: '4.8/5', label: 'GOOGLE RATING', icon: TrendingUp },
+    { value: '4.9/5', label: t('testimonials.stats.averageRating'), icon: Star },
+    { value: '500+', label: t('testimonials.stats.reviews'), icon: Users },
+    { value: '98%', label: t('testimonials.stats.recommend'), icon: ThumbsUp },
+    { value: '4.8/5', label: t('testimonials.stats.googleRating'), icon: TrendingUp },
   ];
 
   const reviews = [
     {
-      text: "An absolutely life-changing experience. The guides were professional and the views were breathtaking. I cannot recommend TREKWON enough!",
+      text: t('testimonials.reviews.review1'),
       name: 'Arjun Mehta',
       trek: 'Valley of Flowers',
       image: '/testimonial-2.jpg',
       rating: 5,
     },
     {
-      text: "I've trekked with many companies, but TREKWON stands out for their safety standards and attention to detail. Truly world-class experience.",
+      text: t('testimonials.reviews.review2'),
       name: 'Sneha Kapoor',
       trek: 'Roopkund Trek',
       image: '/testimonial-1.jpg',
       rating: 5,
     },
     {
-      text: "The best birthday gift I could have given myself. The summit sunrise was magical and the team made everything so comfortable.",
+      text: t('testimonials.reviews.review3'),
       name: 'Rahul Sharma',
       trek: 'Kuari Pass',
       image: '/testimonial-4.jpg',
       rating: 5,
     },
     {
-      text: "Perfect for beginners like me. Felt safe and supported throughout the entire trek. The guides were patient and encouraging.",
+      text: t('testimonials.reviews.review4'),
       name: 'Meera Joshi',
       trek: 'Brahmatal Trek',
       image: '/testimonial-3.jpg',
       rating: 5,
     },
     {
-      text: "The food was incredible for a mountain trek. Hot meals every day, and the team went out of their way to accommodate dietary preferences.",
+      text: t('testimonials.reviews.review5'),
       name: 'Vikram Singh',
       trek: 'GoMukh Tapovan',
       image: '/testimonial-4.jpg',
       rating: 4,
     },
     {
-      text: "Professional, organized, and deeply passionate about the mountains. You can feel the love they have for what they do.",
+      text: t('testimonials.reviews.review6'),
       name: 'Ananya Roy',
       trek: 'Har Ki Dun',
       image: '/testimonial-1.jpg',
       rating: 5,
     },
+  ];
+
+  const trustBadges = [
+    t('testimonials.trusted.google'),
+    t('testimonials.trusted.tripadvisor'),
+    t('testimonials.trusted.uttarakhand'),
+    t('testimonials.trusted.adventure'),
   ];
 
   return (
@@ -65,9 +75,9 @@ export default function Testimonials() {
         <div className="relative z-10 text-center section-padding">
           <ScrollReveal>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight uppercase mb-4">
-              TESTIMONIALS
+              {t('testimonials.hero.title')}
             </h1>
-            <p className="text-lg text-[#9a9a9a]">Stories from our trekkers</p>
+            <p className="text-lg text-[#9a9a9a]">{t('testimonials.hero.subtitle')}</p>
           </ScrollReveal>
         </div>
       </section>
@@ -93,9 +103,9 @@ export default function Testimonials() {
       <section className="py-16 bg-[#030303] border-b border-white/10">
         <div className="section-padding">
           <ScrollReveal>
-            <div className="text-micro mb-4">FEATURED STORY</div>
+            <div className="text-micro mb-4">{t('testimonials.featured.superTitle')}</div>
             <h2 className="text-3xl md:text-4xl font-normal tracking-tight mb-8">
-              TREKKER EXPERIENCE
+              {t('testimonials.featured.title')}
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
@@ -126,9 +136,9 @@ export default function Testimonials() {
       <section className="py-24 bg-[#030303]">
         <div className="section-padding">
           <ScrollReveal>
-            <div className="text-micro mb-4">WHAT TREKKERS SAY</div>
+            <div className="text-micro mb-4">{t('testimonials.reviews.superTitle')}</div>
             <h2 className="text-3xl md:text-4xl font-normal tracking-tight mb-16">
-              REVIEWS
+              {t('testimonials.reviews.title')}
             </h2>
           </ScrollReveal>
 
@@ -173,9 +183,9 @@ export default function Testimonials() {
       <section className="py-16 bg-[#121212] border-t border-white/10">
         <div className="section-padding text-center">
           <ScrollReveal>
-            <div className="text-micro mb-8">TRUSTED BY</div>
+            <div className="text-micro mb-8">{t('testimonials.trusted.superTitle')}</div>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-              {['Google Reviews', 'TripAdvisor', 'Uttarakhand Tourism', 'Adventure Travel'].map((badge) => (
+              {trustBadges.map((badge) => (
                 <div key={badge} className="flex items-center gap-2 text-[#9a9a9a]">
                   <Award className="w-5 h-5 text-[#d79a63]" />
                   <span className="text-sm uppercase tracking-wider">{badge}</span>

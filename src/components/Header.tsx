@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { treks } from '../data/treks';
+import LanguageSelector from './LanguageSelector';
 
 export default function Header() {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isTreksDropdownOpen, setIsTreksDropdownOpen] = useState(false);
@@ -23,14 +26,14 @@ export default function Header() {
   }, [location]);
 
   const navLinks = [
-    { name: 'HOME', path: '/' },
-    { name: 'ABOUT', path: '/about' },
-    { name: 'TREKS', path: '/treks', hasDropdown: true },
-    { name: 'GALLERY', path: '/gallery' },
-    { name: 'TESTIMONIALS', path: '/testimonials' },
-    { name: 'BLOG', path: '/blog' },
-    { name: 'FAQ', path: '/faq' },
-    { name: 'CONTACT', path: '/contact' },
+    { name: t('header.home'), path: '/' },
+    { name: t('header.about'), path: '/about' },
+    { name: t('header.treks'), path: '/treks', hasDropdown: true },
+    { name: t('header.gallery'), path: '/gallery' },
+    { name: t('header.testimonials'), path: '/testimonials' },
+    { name: t('header.blog'), path: '/blog' },
+    { name: t('header.faq'), path: '/faq' },
+    { name: t('header.contact'), path: '/contact' },
   ];
 
   return (
@@ -48,7 +51,7 @@ export default function Header() {
             <img
               src="/trekwon-logo-new.png"
               alt="TREKWON"
-              className="h-34 lg:h-36 w-auto object-contain group-hover:opacity-80 transition-opacity"
+              className="h-16 lg:h-26 w-auto object-contain group-hover:opacity-80 transition-opacity"
             />
           </Link>
 
@@ -81,6 +84,7 @@ export default function Header() {
                         <Link
                           key={trek.id}
                           to={`/treks/${trek.slug}`}
+                          onClick={() => setIsTreksDropdownOpen(false)}
                           className="flex gap-3 group/item hover:bg-white/5 p-2 transition-colors"
                         >
                           <img
@@ -101,9 +105,10 @@ export default function Header() {
                       ))}
                       <Link
                         to="/treks"
+                        onClick={() => setIsTreksDropdownOpen(false)}
                         className="col-span-2 text-center text-xs uppercase tracking-widest text-[#d79a63] hover:text-white transition-colors py-2 border-t border-white/10"
                       >
-                        View All Treks
+                        {t('header.viewAllTreks')}
                       </Link>
                     </div>
                   </div>
@@ -112,13 +117,14 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* Language Selector & CTA Button */}
+          <div className="hidden lg:flex items-center gap-4">
+            <LanguageSelector />
             <Link
               to="/book-a-call"
               className="btn-amber text-xs"
             >
-              BOOK A CALL
+              {t('header.bookACall')}
             </Link>
           </div>
 
@@ -165,12 +171,18 @@ export default function Header() {
                 )}
               </div>
             ))}
+            <div className="py-4 border-t border-white/10 mt-4">
+              <div className="mb-4">
+                <label className="text-xs tracking-widest text-[#9a9a9a] block mb-2">{t('header.language')}</label>
+                <LanguageSelector />
+              </div>
+            </div>
             <Link
               to="/book-a-call"
-              className="btn-amber text-xs text-center mt-4"
+              className="btn-amber text-xs text-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              BOOK A CALL
+              {t('header.bookACall')}
             </Link>
           </nav>
         </div>

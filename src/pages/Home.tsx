@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -14,6 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* ─── Hero Section ─── */
 function HeroSection() {
+  const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -62,26 +64,24 @@ function HeroSection() {
       {/* Content */}
       <div className="relative z-20 min-h-screen flex flex-col justify-end section-padding pb-32">
         <div className="max-w-4xl">
-          <div className="text-micro mb-4">UTTARAKHAND HIMALAYAS</div>
+          <div className="text-micro mb-4">{t('home.hero.superTitle')}</div>
           <h1
             ref={titleRef}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[100px] xl:text-[120px] font-normal leading-[0.9] uppercase tracking-tight mb-6"
-          >
-            EXPLORE<br />THE UNKNOWN
-          </h1>
+            dangerouslySetInnerHTML={{ __html: t('home.hero.title') }}
+          />
           <p
             ref={subtitleRef}
             className="text-lg md:text-xl text-[#9a9a9a] max-w-xl mb-8 opacity-0"
           >
-            Premium guided treks across the Indian Himalayas. 
-            Safe, sustainable, and unforgettable adventures await.
+            {t('home.hero.subtitle')}
           </p>
           <div className="flex flex-wrap gap-4">
             <Link to="/treks" className="btn-amber">
-              EXPLORE TREKS
+              {t('home.hero.exploreTreks')}
             </Link>
             <Link to="/book-a-call" className="btn-outline">
-              BOOK A CALL
+              {t('home.hero.bookACall')}
             </Link>
           </div>
         </div>
@@ -90,13 +90,13 @@ function HeroSection() {
       {/* Bottom Data Bar */}
       <div className="absolute bottom-0 left-0 w-full h-12 bg-[#030303] border-t border-white/10 z-30 flex items-center justify-between section-padding">
         <div className="flex items-center gap-8 text-micro">
-          <span>ELEV: <span className="text-white font-mono">5000M+</span></span>
-          <span className="hidden sm:inline">REGION: <span className="text-white font-mono">GARHWAL</span></span>
-          <span className="hidden md:inline">TRENDING: <span className="text-[#d79a63] font-mono">ACTIVE</span></span>
+          <span>{t('home.hero.elev')} <span className="text-white font-mono">5000M+</span></span>
+          <span className="hidden sm:inline">{t('home.hero.region')} <span className="text-white font-mono">GARHWAL</span></span>
+          <span className="hidden md:inline">{t('home.hero.trending')} <span className="text-[#d79a63] font-mono">ACTIVE</span></span>
         </div>
         <div className="text-micro hidden lg:block">
           <TrendingUp className="w-4 h-4 inline mr-2 text-[#d79a63]" />
-          <span className="font-mono">5000+ HAPPY TREKKERS</span>
+          <span className="font-mono">{t('home.hero.happyTrekkers')}</span>
         </div>
       </div>
     </section>
@@ -105,11 +105,12 @@ function HeroSection() {
 
 /* ─── Statistics Section ─── */
 function StatsSection() {
+  const { t } = useTranslation();
   const stats = [
-    { value: '5000+', label: 'HAPPY TREKKERS' },
-    { value: '12+', label: 'PREMIUM TREKS' },
-    { value: '98%', label: 'CUSTOMER SATISFACTION' },
-    { value: '10+', label: 'YEARS EXPERIENCE' },
+    { value: '5000+', label: t('home.stats.happyTrekkers') },
+    { value: '12+', label: t('home.stats.premiumTreks') },
+    { value: '98%', label: t('home.stats.customerSatisfaction') },
+    { value: '10+', label: t('home.stats.yearsExperience') },
   ];
 
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -156,24 +157,25 @@ function StatsSection() {
 
 /* ─── Why Choose Us Section ─── */
 function WhyChooseSection() {
+  const { t } = useTranslation();
   const features = [
-    { icon: Mountain, title: 'EXPERT LOCAL GUIDES', desc: 'Certified Himalayan guides with 10+ years of experience' },
-    { icon: Shield, title: 'SAFE ADVENTURES', desc: 'Comprehensive safety protocols and emergency support' },
-    { icon: Heart, title: 'MEDICAL SUPPORT', desc: 'Trained medical staff and equipment on every trek' },
-    { icon: Tent, title: 'PREMIUM CAMPING', desc: 'High-quality camping gear and comfortable stays' },
-    { icon: Utensils, title: 'MEALS INCLUDED', desc: 'Nutritious, hygienic meals prepared by our team' },
-    { icon: Camera, title: 'PHOTOGRAPHY', desc: 'Stunning locations perfect for capturing memories' },
-    { icon: Users, title: 'SMALL GROUPS', desc: 'Intimate groups of 8-15 for personalized attention' },
-    { icon: Truck, title: 'TRANSPORT', desc: 'Reliable pickup and drop-off from base cities' },
+    { icon: Mountain, title: t('home.whyChoose.expertGuides'), desc: t('home.whyChoose.expertGuidesDesc') },
+    { icon: Shield, title: t('home.whyChoose.safeAdventures'), desc: t('home.whyChoose.safeAdventuresDesc') },
+    { icon: Heart, title: t('home.whyChoose.medicalSupport'), desc: t('home.whyChoose.medicalSupportDesc') },
+    { icon: Tent, title: t('home.whyChoose.premiumCamping'), desc: t('home.whyChoose.premiumCampingDesc') },
+    { icon: Utensils, title: t('home.whyChoose.mealsIncluded'), desc: t('home.whyChoose.mealsIncludedDesc') },
+    { icon: Camera, title: t('home.whyChoose.photography'), desc: t('home.whyChoose.photographyDesc') },
+    { icon: Users, title: t('home.whyChoose.smallGroups'), desc: t('home.whyChoose.smallGroupsDesc') },
+    { icon: Truck, title: t('home.whyChoose.transport'), desc: t('home.whyChoose.transportDesc') },
   ];
 
   return (
     <section className="py-24 bg-[#030303]">
       <div className="section-padding">
         <ScrollReveal>
-          <div className="text-micro mb-4">WHY TREKWON</div>
+          <div className="text-micro mb-4">{t('home.whyChoose.superTitle')}</div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight mb-16">
-            WHY CHOOSE US
+            {t('home.whyChoose.title')}
           </h2>
         </ScrollReveal>
 
@@ -195,19 +197,20 @@ function WhyChooseSection() {
 
 /* ─── Featured Trekks Section ─── */
 function TreksSection() {
+  const { t } = useTranslation();
   return (
     <section className="py-24 bg-[#030303] border-t border-white/10">
       <div className="section-padding">
         <ScrollReveal>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-4">
             <div>
-              <div className="text-micro mb-4">OUR DESTINATIONS</div>
+              <div className="text-micro mb-4">{t('home.treks.superTitle')}</div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight">
-                TREKS WE COVER
+                {t('home.treks.title')}
               </h2>
             </div>
             <Link to="/treks" className="btn-outline text-xs flex items-center gap-2">
-              VIEW ALL <ArrowRight className="w-4 h-4" />
+              {t('home.treks.viewAll')} <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </ScrollReveal>
@@ -243,7 +246,7 @@ function TreksSection() {
                         ₹{trek.price.toLocaleString('en-IN')}
                       </span>
                       <span className="text-xs text-[#9a9a9a] group-hover:text-white transition-colors flex items-center gap-1">
-                        EXPLORE <ChevronRight className="w-3 h-3" />
+                        {t('home.treks.explore')} <ChevronRight className="w-3 h-3" />
                       </span>
                     </div>
                   </div>
@@ -259,6 +262,7 @@ function TreksSection() {
 
 /* ─── Gallery Preview Section ─── */
 function GalleryPreview() {
+  const { t } = useTranslation();
   const images = [
     { src: '/gallery-camping.jpg', alt: 'Camping under stars', span: 'col-span-2 row-span-2' },
     { src: '/gallery-forest.jpg', alt: 'Forest trail', span: 'col-span-1 row-span-1' },
@@ -273,13 +277,13 @@ function GalleryPreview() {
         <ScrollReveal>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-4">
             <div>
-              <div className="text-micro mb-4">MOMENTS FROM THE TRAIL</div>
+              <div className="text-micro mb-4">{t('home.gallery.superTitle')}</div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight">
-                PHOTO GALLERY
+                {t('home.gallery.title')}
               </h2>
             </div>
             <Link to="/gallery" className="btn-outline text-xs flex items-center gap-2">
-              VIEW ALL <ArrowRight className="w-4 h-4" />
+              {t('home.gallery.viewAll')} <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </ScrollReveal>
@@ -309,21 +313,22 @@ function GalleryPreview() {
 
 /* ─── Testimonials Section ─── */
 function TestimonialsSection() {
+  const { t } = useTranslation();
   const testimonials = [
     {
-      text: "An absolutely life-changing experience. The guides were professional and the views were breathtaking. I cannot recommend TREKWON enough!",
+      text: t('home.testimonials.testimonial1'),
       name: 'Arjun Mehta',
       trek: 'Valley of Flowers',
       image: '/testimonial-2.jpg',
     },
     {
-      text: "I've trekked with many companies, but TREKWON stands out for their safety standards and attention to detail. Truly world-class.",
+      text: t('home.testimonials.testimonial2'),
       name: 'Sneha Kapoor',
       trek: 'Roopkund Trek',
       image: '/testimonial-1.jpg',
     },
     {
-      text: "The best birthday gift I could have given myself. The summit sunrise was magical and the team made everything so comfortable.",
+      text: t('home.testimonials.testimonial3'),
       name: 'Rahul Sharma',
       trek: 'Kuari Pass',
       image: '/testimonial-4.jpg',
@@ -334,9 +339,9 @@ function TestimonialsSection() {
     <section className="py-24 bg-[#030303] border-t border-white/10">
       <div className="section-padding">
         <ScrollReveal>
-          <div className="text-micro mb-4">TREKKER STORIES</div>
+          <div className="text-micro mb-4">{t('home.testimonials.superTitle')}</div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight mb-16">
-            TESTIMONIALS
+            {t('home.testimonials.title')}
           </h2>
         </ScrollReveal>
 
@@ -374,6 +379,7 @@ function TestimonialsSection() {
 
 /* ─── CTA Section ─── */
 function CTASection() {
+  const { t } = useTranslation();
   return (
     <section className="py-32 bg-[#030303] border-t border-white/10 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -387,20 +393,19 @@ function CTASection() {
 
       <div className="relative z-10 section-padding text-center">
         <ScrollReveal>
-          <div className="text-micro mb-4">READY FOR ADVENTURE?</div>
+          <div className="text-micro mb-4">{t('home.cta.superTitle')}</div>
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-normal tracking-tight mb-6">
-            BEGIN YOUR JOURNEY
+            {t('home.cta.title')}
           </h2>
           <p className="text-[#9a9a9a] max-w-xl mx-auto mb-10">
-            Let our experts help you choose the perfect trek based on your fitness level, 
-            experience, and preferences. Book a free consultation today.
+            {t('home.cta.subtitle')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/book-a-call" className="btn-amber">
-              BOOK FREE CONSULTATION
+              {t('home.cta.bookConsultation')}
             </Link>
             <Link to="/treks" className="btn-outline">
-              BROWSE TREKS
+              {t('home.cta.browseTreks')}
             </Link>
           </div>
         </ScrollReveal>
@@ -411,22 +416,23 @@ function CTASection() {
 
 /* ─── Blog Preview Section ─── */
 function BlogPreview() {
+  const { t } = useTranslation();
   const posts = [
     {
-      title: 'The Ultimate Guide to High Altitude Trekking Preparation',
-      category: 'FITNESS',
+      title: t('home.blog.post1Title'),
+      category: t('home.blog.categoryFitness'),
       image: '/blog-fitness.jpg',
       date: 'June 10, 2026',
     },
     {
-      title: '10 Essential Items for Your Trekking Backpack',
-      category: 'PACKING GUIDES',
+      title: t('home.blog.post2Title'),
+      category: t('home.blog.categoryPacking'),
       image: '/blog-packing.jpg',
       date: 'June 5, 2026',
     },
     {
-      title: 'Best Time to Visit Valley of Flowers',
-      category: 'DESTINATIONS',
+      title: t('home.blog.post3Title'),
+      category: t('home.blog.categoryDestinations'),
       image: '/trek-valley-flowers new.jpeg',
       date: 'May 28, 2026',
     },
@@ -438,13 +444,13 @@ function BlogPreview() {
         <ScrollReveal>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-4">
             <div>
-              <div className="text-micro mb-4">FROM THE BLOG</div>
+              <div className="text-micro mb-4">{t('home.blog.superTitle')}</div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight">
-                LATEST ARTICLES
+                {t('home.blog.title')}
               </h2>
             </div>
             <Link to="/blog" className="btn-outline text-xs flex items-center gap-2">
-              VIEW ALL <ArrowRight className="w-4 h-4" />
+              {t('home.blog.viewAll')} <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </ScrollReveal>
@@ -478,22 +484,23 @@ function BlogPreview() {
 
 /* ─── Adventure Journey Timeline ─── */
 function JourneySection() {
+  const { t } = useTranslation();
   const steps = [
-    { num: '01', title: 'PLAN', desc: 'Choose your trek and dates' },
-    { num: '02', title: 'PREPARE', desc: 'Get fit and pack your gear' },
-    { num: '03', title: 'TRAVEL', desc: 'Reach the base camp city' },
-    { num: '04', title: 'TREK', desc: 'Experience the Himalayas' },
-    { num: '05', title: 'SUMMIT', desc: 'Reach your destination' },
-    { num: '06', title: 'RETURN', desc: 'Carry memories for life' },
+    { num: '01', title: t('home.journey.step1Title'), desc: t('home.journey.step1Desc') },
+    { num: '02', title: t('home.journey.step2Title'), desc: t('home.journey.step2Desc') },
+    { num: '03', title: t('home.journey.step3Title'), desc: t('home.journey.step3Desc') },
+    { num: '04', title: t('home.journey.step4Title'), desc: t('home.journey.step4Desc') },
+    { num: '05', title: t('home.journey.step5Title'), desc: t('home.journey.step5Desc') },
+    { num: '06', title: t('home.journey.step6Title'), desc: t('home.journey.step6Desc') },
   ];
 
   return (
     <section className="py-24 bg-[#030303] border-t border-white/10">
       <div className="section-padding">
         <ScrollReveal>
-          <div className="text-micro mb-4">HOW IT WORKS</div>
+          <div className="text-micro mb-4">{t('home.journey.superTitle')}</div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight mb-16">
-            YOUR ADVENTURE JOURNEY
+            {t('home.journey.title')}
           </h2>
         </ScrollReveal>
 
@@ -522,6 +529,7 @@ function JourneySection() {
 
 /* ─── Newsletter Section ─── */
 function NewsletterSection() {
+  const { t } = useTranslation();
   return (
     <section className="py-24 bg-[#121212] border-t border-white/10">
       <div className="section-padding">
@@ -529,20 +537,19 @@ function NewsletterSection() {
           <div className="max-w-2xl mx-auto text-center">
             <MapPin className="w-8 h-8 text-[#d79a63] mx-auto mb-6" />
             <h3 className="text-2xl md:text-3xl uppercase tracking-tight mb-4">
-              GET TREKKING TIPS IN YOUR INBOX
+              {t('home.newsletter.title')}
             </h3>
             <p className="text-[#9a9a9a] mb-8">
-              Subscribe to our newsletter for exclusive trekking guides, preparation tips, 
-              and early access to new trek announcements.
+              {t('home.newsletter.subtitle')}
             </p>
             <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t('home.newsletter.placeholder')}
                 className="flex-1 bg-[#030303] border border-white/20 px-4 py-3 text-sm text-white placeholder:text-[#9a9a9a] focus:outline-none focus:border-[#d79a63]"
               />
               <button type="submit" className="btn-amber">
-                SUBSCRIBE
+                {t('home.newsletter.subscribe')}
               </button>
             </form>
           </div>

@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Check, Calendar, Users, MessageSquare, ArrowRight, Clock } from 'lucide-react';
 import { treks } from '../data/treks';
 import ScrollReveal from '../components/ScrollReveal';
 
 export default function BookACall() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -24,30 +26,30 @@ export default function BookACall() {
   const benefits = [
     {
       icon: Users,
-      title: 'Personalized Trek Recommendation',
-      desc: 'Our experts analyze your fitness level, experience, and preferences to recommend the perfect trek for you.',
+      title: t('bookACall.benefits.b1Title'),
+      desc: t('bookACall.benefits.b1Desc'),
     },
     {
       icon: Calendar,
-      title: 'Detailed Itinerary Discussion',
-      desc: 'Get a day-by-day breakdown of your trek, including what to expect at each campsite and viewpoint.',
+      title: t('bookACall.benefits.b2Title'),
+      desc: t('bookACall.benefits.b2Desc'),
     },
     {
       icon: MessageSquare,
-      title: 'Packing & Preparation Guidance',
-      desc: 'Receive a customized packing list and fitness preparation plan tailored to your specific trek.',
+      title: t('bookACall.benefits.b3Title'),
+      desc: t('bookACall.benefits.b3Desc'),
     },
     {
       icon: Check,
-      title: 'Group Discount Information',
-      desc: 'Learn about exclusive group booking benefits and early bird discounts for your trekking dates.',
+      title: t('bookACall.benefits.b4Title'),
+      desc: t('bookACall.benefits.b4Desc'),
     },
   ];
 
   const steps = [
-    { num: '01', title: 'SUBMIT', desc: 'Fill the form above' },
-    { num: '02', title: 'SCHEDULE', desc: 'We call you within 24 hours' },
-    { num: '03', title: 'PLAN', desc: 'Get your personalized trek plan' },
+    { num: '01', title: t('bookACall.process.step1'), desc: t('bookACall.process.step1Desc') },
+    { num: '02', title: t('bookACall.process.step2'), desc: t('bookACall.process.step2Desc') },
+    { num: '03', title: t('bookACall.process.step3'), desc: t('bookACall.process.step3Desc') },
   ];
 
   return (
@@ -61,9 +63,9 @@ export default function BookACall() {
         <div className="relative z-10 text-center section-padding">
           <ScrollReveal>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight uppercase mb-4">
-              BOOK A CALL
+              {t('bookACall.hero.title')}
             </h1>
-            <p className="text-lg text-[#9a9a9a]">Free trek consultation with our experts</p>
+            <p className="text-lg text-[#9a9a9a]">{t('bookACall.hero.subtitle')}</p>
           </ScrollReveal>
         </div>
       </section>
@@ -82,74 +84,74 @@ export default function BookACall() {
                         <Check className="w-8 h-8 text-[#d79a63]" />
                       </div>
                       <h3 className="text-2xl uppercase tracking-wider mb-4">
-                        THANK YOU!
+                        {t('bookACall.form.thankYou')}
                       </h3>
                       <p className="text-[#9a9a9a] mb-8">
-                        We've received your request. Our team will call you within 24 hours to discuss your trekking plans.
+                        {t('bookACall.form.received')}
                       </p>
                       <Link to="/treks" className="btn-outline text-xs">
-                        BROWSE TREKS
+                        {t('bookACall.form.browse')}
                       </Link>
                     </div>
                   ) : (
                     <div className="p-8">
-                      <div className="text-micro mb-4">FREE CONSULTATION</div>
+                      <div className="text-micro mb-4">{t('bookACall.form.superTitle')}</div>
                       <h2 className="text-2xl uppercase tracking-tight mb-8">
-                        BOOK YOUR CALL
+                        {t('bookACall.form.title')}
                       </h2>
                       <form onSubmit={handleSubmit} className="space-y-5">
                         <div>
-                          <label className="text-micro mb-2 block">FULL NAME *</label>
+                          <label className="text-micro mb-2 block">{t('bookACall.form.name')}</label>
                           <input
                             type="text"
                             required
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             className="w-full bg-[#030303] border border-white/20 px-4 py-3 text-sm text-white placeholder:text-[#9a9a9a] focus:outline-none focus:border-[#d79a63]"
-                            placeholder="Enter your full name"
+                            placeholder={t('bookACall.form.namePlaceholder')}
                           />
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                           <div>
-                            <label className="text-micro mb-2 block">PHONE NUMBER *</label>
+                            <label className="text-micro mb-2 block">{t('bookACall.form.phone')}</label>
                             <input
                               type="tel"
                               required
                               value={formData.phone}
                               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                               className="w-full bg-[#030303] border border-white/20 px-4 py-3 text-sm text-white placeholder:text-[#9a9a9a] focus:outline-none focus:border-[#d79a63]"
-                              placeholder="+91 98765 43210"
+                              placeholder={t('bookACall.form.phonePlaceholder')}
                             />
                           </div>
                           <div>
-                            <label className="text-micro mb-2 block">EMAIL ADDRESS *</label>
+                            <label className="text-micro mb-2 block">{t('bookACall.form.email')}</label>
                             <input
                               type="email"
                               required
                               value={formData.email}
                               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                               className="w-full bg-[#030303] border border-white/20 px-4 py-3 text-sm text-white placeholder:text-[#9a9a9a] focus:outline-none focus:border-[#d79a63]"
-                              placeholder="your@email.com"
+                              placeholder={t('bookACall.form.emailPlaceholder')}
                             />
                           </div>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                           <div>
-                            <label className="text-micro mb-2 block">PREFERRED TREK</label>
+                            <label className="text-micro mb-2 block">{t('bookACall.form.trek')}</label>
                             <select
                               value={formData.trek}
                               onChange={(e) => setFormData({ ...formData, trek: e.target.value })}
                               className="w-full bg-[#030303] border border-white/20 px-4 py-3 text-sm text-white focus:outline-none focus:border-[#d79a63]"
                             >
-                              <option value="">Select Trek</option>
+                              <option value="">{t('bookACall.form.selectTrek')}</option>
                               {treks.map((t) => (
                                 <option key={t.id} value={t.slug}>{t.shortName}</option>
                               ))}
-                              <option value="custom">Custom Trek</option>
+                              <option value="custom">{t('bookACall.form.customTrek')}</option>
                             </select>
                           </div>
                           <div>
-                            <label className="text-micro mb-2 block">PREFERRED DATE *</label>
+                            <label className="text-micro mb-2 block">{t('bookACall.form.date')}</label>
                             <input
                               type="date"
                               required
@@ -160,7 +162,7 @@ export default function BookACall() {
                           </div>
                         </div>
                         <div>
-                          <label className="text-micro mb-2 block">GROUP SIZE</label>
+                          <label className="text-micro mb-2 block">{t('bookACall.form.groupSize')}</label>
                           <input
                             type="number"
                             min={1}
@@ -171,17 +173,17 @@ export default function BookACall() {
                           />
                         </div>
                         <div>
-                          <label className="text-micro mb-2 block">MESSAGE</label>
+                          <label className="text-micro mb-2 block">{t('bookACall.form.message')}</label>
                           <textarea
                             rows={4}
                             value={formData.message}
                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             className="w-full bg-[#030303] border border-white/20 px-4 py-3 text-sm text-white placeholder:text-[#9a9a9a] focus:outline-none focus:border-[#d79a63] resize-none"
-                            placeholder="Tell us about your trekking experience and any special requirements..."
+                            placeholder={t('bookACall.form.messagePlaceholder')}
                           />
                         </div>
                         <button type="submit" className="btn-amber w-full">
-                          BOOK FREE CONSULTATION
+                          {t('bookACall.form.submit')}
                         </button>
                       </form>
                     </div>
@@ -193,9 +195,9 @@ export default function BookACall() {
             {/* Benefits */}
             <div>
               <ScrollReveal delay={0.1}>
-                <div className="text-micro mb-4">WHY BOOK A CALL</div>
+                <div className="text-micro mb-4">{t('bookACall.benefits.superTitle')}</div>
                 <h2 className="text-3xl md:text-4xl font-normal tracking-tight mb-8">
-                  WHAT YOU GET
+                  {t('bookACall.benefits.title')}
                 </h2>
               </ScrollReveal>
 
@@ -219,11 +221,10 @@ export default function BookACall() {
                 <div className="p-6 bg-[#121212] border border-white/10">
                   <div className="flex items-center gap-2 text-micro mb-2">
                     <Clock className="w-4 h-4 text-[#d79a63]" />
-                    <span>NO OBLIGATION</span>
+                    <span>{t('bookACall.obligation.title')}</span>
                   </div>
                   <p className="text-sm text-[#9a9a9a]">
-                    This is a completely free consultation with no obligation to book. 
-                    We're here to help you make an informed decision about your Himalayan adventure.
+                    {t('bookACall.obligation.desc')}
                   </p>
                 </div>
               </ScrollReveal>
@@ -236,9 +237,9 @@ export default function BookACall() {
       <section className="py-24 bg-[#030303] border-t border-white/10">
         <div className="section-padding">
           <ScrollReveal>
-            <div className="text-micro mb-4">THE PROCESS</div>
+            <div className="text-micro mb-4">{t('bookACall.process.superTitle')}</div>
             <h2 className="text-3xl md:text-4xl font-normal tracking-tight mb-16">
-              WHAT HAPPENS NEXT
+              {t('bookACall.process.title')}
             </h2>
           </ScrollReveal>
 
@@ -268,13 +269,13 @@ export default function BookACall() {
         <div className="section-padding text-center">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl font-normal tracking-tight mb-6">
-              READY TO EXPLORE?
+              {t('bookACall.cta.title')}
             </h2>
             <p className="text-[#9a9a9a] max-w-xl mx-auto mb-10">
-              Browse our curated collection of Himalayan treks and find the perfect adventure for you.
+              {t('bookACall.cta.subtitle')}
             </p>
             <Link to="/treks" className="btn-amber inline-flex items-center gap-2">
-              VIEW ALL TREKS <ArrowRight className="w-4 h-4" />
+              {t('bookACall.cta.button')} <ArrowRight className="w-4 h-4" />
             </Link>
           </ScrollReveal>
         </div>

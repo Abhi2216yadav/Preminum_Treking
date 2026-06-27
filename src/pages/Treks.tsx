@@ -1,13 +1,20 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { treks } from '../data/treks';
 import ScrollReveal from '../components/ScrollReveal';
 
 export default function Treks() {
+  const { t } = useTranslation();
   const [filter, setFilter] = useState<string>('ALL');
 
-  const filters = ['ALL', 'EASY', 'MODERATE', 'DIFFICULT'];
+  const filters = [
+    { key: 'ALL', label: t('treks.filters.all') },
+    { key: 'EASY', label: t('treks.filters.easy') },
+    { key: 'MODERATE', label: t('treks.filters.moderate') },
+    { key: 'DIFFICULT', label: t('treks.filters.difficult') },
+  ];
 
   const filteredTreks = filter === 'ALL'
     ? treks
@@ -28,12 +35,12 @@ export default function Treks() {
         </div>
         <div className="relative z-10 text-center section-padding">
           <ScrollReveal>
-            <div className="text-micro mb-4">UTTARAKHAND HIMALAYAS</div>
+            <div className="text-micro mb-4">{t('treks.hero.superTitle')}</div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight uppercase mb-4">
-              TREKS WE COVER
+              {t('treks.hero.title')}
             </h1>
             <p className="text-lg text-[#9a9a9a] max-w-xl mx-auto">
-              Curated Himalayan Expeditions Across Uttarakhand
+              {t('treks.hero.subtitle')}
             </p>
           </ScrollReveal>
         </div>
@@ -45,15 +52,15 @@ export default function Treks() {
           <div className="flex flex-wrap gap-3">
             {filters.map((f) => (
               <button
-                key={f}
-                onClick={() => setFilter(f)}
+                key={f.key}
+                onClick={() => setFilter(f.key)}
                 className={`px-4 py-2 text-xs uppercase tracking-widest border transition-all ${
-                  filter === f
+                  filter === f.key
                     ? 'bg-[#d79a63] text-[#030303] border-[#d79a63]'
                     : 'bg-transparent text-[#9a9a9a] border-white/20 hover:border-white/40 hover:text-white'
                 }`}
               >
-                {f}
+                {f.label}
               </button>
             ))}
           </div>
@@ -99,13 +106,13 @@ export default function Treks() {
                         to={`/treks/${trek.slug}`}
                         className="btn-outline text-xs flex-1 text-center"
                       >
-                        EXPLORE TREK
+                        {t('treks.grid.exploreTrek')}
                       </Link>
                       <Link
                         to="/book-a-call"
                         className="btn-amber text-xs flex-1 text-center"
                       >
-                        BOOK NOW
+                        {t('treks.grid.bookNow')}
                       </Link>
                     </div>
                   </div>
@@ -125,13 +132,13 @@ export default function Treks() {
         <div className="relative z-10 section-padding text-center">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl font-normal tracking-tight mb-6">
-              READY FOR YOUR NEXT ADVENTURE?
+              {t('treks.cta.title')}
             </h2>
             <p className="text-[#9a9a9a] max-w-xl mx-auto mb-10">
-              Not sure which trek is right for you? Our experts are here to help you choose.
+              {t('treks.cta.subtitle')}
             </p>
             <Link to="/book-a-call" className="btn-amber">
-              BOOK A CALL
+              {t('treks.cta.bookACall')}
             </Link>
           </ScrollReveal>
         </div>

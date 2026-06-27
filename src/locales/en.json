@@ -1,0 +1,536 @@
+{
+  "header": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "treks": "TREKS",
+    "gallery": "GALLERY",
+    "testimonials": "TESTIMONIALS",
+    "blog": "BLOG",
+    "faq": "FAQ",
+    "contact": "CONTACT",
+    "viewAllTreks": "View All Treks",
+    "bookACall": "BOOK A CALL",
+    "language": "LANGUAGE"
+  },
+  "home": {
+    "hero": {
+      "superTitle": "UTTARAKHAND HIMALAYAS",
+      "title": "EXPLORE<br />THE UNKNOWN",
+      "subtitle": "Premium guided treks across the Indian Himalayas. Safe, sustainable, and unforgettable adventures await.",
+      "exploreTreks": "EXPLORE TREKS",
+      "bookACall": "BOOK A CALL",
+      "elev": "ELEV:",
+      "region": "REGION:",
+      "trending": "TRENDING:",
+      "happyTrekkers": "5000+ HAPPY TREKKERS"
+    },
+    "stats": {
+      "happyTrekkers": "HAPPY TREKKERS",
+      "premiumTreks": "PREMIUM TREKS",
+      "customerSatisfaction": "CUSTOMER SATISFACTION",
+      "yearsExperience": "YEARS EXPERIENCE"
+    },
+    "whyChoose": {
+      "superTitle": "WHY TREKWON",
+      "title": "WHY CHOOSE US",
+      "expertGuides": "EXPERT LOCAL GUIDES",
+      "expertGuidesDesc": "Certified Himalayan guides with 10+ years of experience",
+      "safeAdventures": "SAFE ADVENTURES",
+      "safeAdventuresDesc": "Comprehensive safety protocols and emergency support",
+      "medicalSupport": "MEDICAL SUPPORT",
+      "medicalSupportDesc": "Trained medical staff and equipment on every trek",
+      "premiumCamping": "PREMIUM CAMPING",
+      "premiumCampingDesc": "High-quality camping gear and comfortable stays",
+      "mealsIncluded": "MEALS INCLUDED",
+      "mealsIncludedDesc": "Nutritious, hygienic meals prepared by our team",
+      "photography": "PHOTOGRAPHY",
+      "photographyDesc": "Stunning locations perfect for capturing memories",
+      "smallGroups": "SMALL GROUPS",
+      "smallGroupsDesc": "Intimate groups of 8-15 for personalized attention",
+      "transport": "TRANSPORT",
+      "transportDesc": "Reliable pickup and drop-off from base cities"
+    },
+    "treks": {
+      "superTitle": "OUR DESTINATIONS",
+      "title": "TREKS WE COVER",
+      "viewAll": "VIEW ALL",
+      "explore": "EXPLORE"
+    },
+    "gallery": {
+      "superTitle": "MOMENTS FROM THE TRAIL",
+      "title": "PHOTO GALLERY",
+      "viewAll": "VIEW ALL"
+    },
+    "testimonials": {
+      "superTitle": "TREKKER STORIES",
+      "title": "TESTIMONIALS",
+      "testimonial1": "An absolutely life-changing experience. The guides were professional and the views were breathtaking. I cannot recommend TREKWON enough!",
+      "testimonial2": "I've trekked with many companies, but TREKWON stands out for their safety standards and attention to detail. Truly world-class.",
+      "testimonial3": "The best birthday gift I could have given myself. The summit sunrise was magical and the team made everything so comfortable."
+    },
+    "cta": {
+      "superTitle": "READY FOR ADVENTURE?",
+      "title": "BEGIN YOUR JOURNEY",
+      "subtitle": "Let our experts help you choose the perfect trek based on your fitness level, experience, and preferences. Book a free consultation today.",
+      "bookConsultation": "BOOK FREE CONSULTATION",
+      "browseTreks": "BROWSE TREKS"
+    },
+    "blog": {
+      "superTitle": "FROM THE BLOG",
+      "title": "LATEST ARTICLES",
+      "viewAll": "VIEW ALL",
+      "post1Title": "The Ultimate Guide to High Altitude Trekking Preparation",
+      "post1Excerpt": "Preparing for a high-altitude trek requires more than just enthusiasm. Learn the essential fitness routines, acclimatization strategies, and mental preparation techniques.",
+      "post2Title": "10 Essential Items for Your Trekking Backpack",
+      "post2Excerpt": "A well-packed backpack can make or break your trekking experience. Here are the 10 must-have items every Himalayan trekker should carry.",
+      "post3Title": "Best Time to Visit Valley of Flowers",
+      "post3Excerpt": "Timing is everything for the Valley of Flowers. Discover the optimal months to witness this UNESCO World Heritage Site in full bloom.",
+      "post4Title": "How to Prevent Altitude Sickness: A Complete Guide",
+      "post4Excerpt": "Altitude sickness can affect anyone regardless of fitness level. Learn the symptoms, prevention strategies, and treatment options for a safe trek.",
+      "post5Title": "Trekking Photography: Capturing the Himalayas",
+      "post5Excerpt": "Master the art of Himalayan landscape photography. From golden hour tips to gear recommendations for high-altitude conditions.",
+      "post6Title": "Fitness Routine for Himalayan Treks",
+      "post6Excerpt": "A 4-week training plan designed specifically for Himalayan treks. Build stamina, strength, and endurance for high-altitude adventures.",
+      "post7Title": "Roopkund: The Mystery Lake Trek Explained",
+      "post7Excerpt": "Uncover the fascinating history and mystery behind the Skeleton Lake of Roopkund. A comprehensive guide to this unique trek.",
+      "categoryFitness": "FITNESS",
+      "categoryPacking": "PACKING GUIDES",
+      "categoryDestinations": "DESTINATIONS",
+      "categorySafety": "SAFETY",
+      "categoryPhotography": "PHOTOGRAPHY"
+    },
+    "journey": {
+      "superTitle": "HOW IT WORKS",
+      "title": "YOUR ADVENTURE JOURNEY",
+      "step1Title": "PLAN",
+      "step1Desc": "Choose your trek and dates",
+      "step2Title": "PREPARE",
+      "step2Desc": "Get fit and pack your gear",
+      "step3Title": "TRAVEL",
+      "step3Desc": "Reach the base camp city",
+      "step4Title": "TREK",
+      "step4Desc": "Experience the Himalayas",
+      "step5Title": "SUMMIT",
+      "step5Desc": "Reach your destination",
+      "step6Title": "RETURN",
+      "step6Desc": "Carry memories for life"
+    },
+    "newsletter": {
+      "title": "GET TREKKING TIPS IN YOUR INBOX",
+      "subtitle": "Subscribe for exclusive trekking guides, preparation tips, and early access to new trek announcements.",
+      "placeholder": "Enter your email",
+      "subscribe": "SUBSCRIBE"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Our Story",
+      "subtitle": "A decade of Himalayan expeditions, unforgettable memories, and lifelong connections"
+    },
+    "story": {
+      "superTitle": "WHO WE ARE",
+      "title": "DISCOVERING THE HIMALAYAS, ONE TREK AT A TIME",
+      "p1": "Founded in 2014 in the foothills of Dehradun, TREKWON began with a simple mission: to make the majestic Indian Himalayas accessible to every adventure enthusiast while maintaining the highest standards of safety and sustainability.",
+      "p2": "What started as a small team of passionate local guides has grown into one of Uttarakhand's most trusted trekking companies. Over the past decade, we've led more than 5,000 trekkers through some of the most breathtaking landscapes on Earth.",
+      "p3": "We believe that trekking is not just about reaching the summit — it's about the journey, the connections you make, and the transformative power of the mountains. Every trek we organize is designed to create lasting memories while respecting the fragile Himalayan ecosystem.",
+      "stat1": "HAPPY TREKKERS",
+      "stat2": "YEARS EXPERIENCE",
+      "stat3": "PREMIUM TREKS",
+      "stat4": "CUSTOMER SATISFACTION"
+    },
+    "mission": {
+      "superTitle": "OUR MISSION",
+      "title": "MAKING HIMALAYAN TREKS SAFE & ACCESSIBLE",
+      "p1": "To provide world-class trekking experiences in the Indian Himalayas that are safe, sustainable, and accessible to everyone — from first-time trekkers to seasoned adventurers. We are committed to preserving the pristine beauty of the mountains while empowering local communities through responsible tourism."
+    },
+    "vision": {
+      "superTitle": "OUR VISION",
+      "title": "INDIA'S MOST TRUSTED TREKKING BRAND",
+      "p1": "To become India's most trusted and respected trekking brand, known for our uncompromising safety standards, exceptional customer experiences, and commitment to environmental conservation. We envision a world where every person can experience the transformative power of the Himalayas."
+    },
+    "whyChoose": {
+      "superTitle": "WHY TREKWON",
+      "title": "WHAT SETS US APART",
+      "feature1Title": "Expert Local Guides",
+      "feature1Desc": "Our guides are certified mountaineers with deep knowledge of Himalayan terrain, weather patterns, and local culture.",
+      "feature2Title": "Safety First Approach",
+      "feature2Desc": "Comprehensive safety protocols including medical kits, oxygen cylinders, satellite communication, and evacuation plans.",
+      "feature3Title": "Photography Support",
+      "feature3Desc": "Our guides know the best vantage points and golden hour timings to help you capture stunning Himalayan shots.",
+      "feature4Title": "Small Group Experience",
+      "feature4Desc": "We cap our groups at 15 trekkers to ensure personalized attention and a more intimate wilderness experience.",
+      "feature5Title": "Premium Meals",
+      "feature5Desc": "Nutritious, hot, and hygienic vegetarian meals prepared fresh at every campsite by our trained kitchen staff.",
+      "feature6Title": "Quality Camping",
+      "feature6Desc": "High-grade tents, sleeping bags rated for sub-zero temperatures, and comfortable sleeping mats provided.",
+      "feature7Title": "Reliable Transport",
+      "feature7Desc": "Safe and comfortable pickup and drop-off services from Dehradun, Kathgodam, or other base cities.",
+      "feature8Title": "Medical Support",
+      "feature8Desc": "Trained medical professionals accompany every trek. We carry comprehensive first aid and emergency oxygen."
+    },
+    "team": {
+      "superTitle": "OUR TEAM",
+      "title": "MEET THE EXPERTS",
+      "member1Role": "Lead Guide & Founder",
+      "member1Bio": "20+ years of Himalayan trekking experience. Certified mountaineer from NIM.",
+      "member2Role": "Trek Coordinator",
+      "member2Bio": "Expert in logistics and trek planning. Ensures smooth operations on every expedition.",
+      "member3Role": "Safety Expert",
+      "member3Bio": "Wilderness First Responder certified. Specializes in high-altitude safety protocols."
+    },
+    "achievements": {
+      "superTitle": "RECOGNITION",
+      "title": "OUR ACHIEVEMENTS",
+      "achievement1Title": "Top Rated Trekking Company",
+      "achievement1Desc": "Rated 4.9/5 on Google with 500+ reviews",
+      "achievement2Title": "Ministry of Tourism Approved",
+      "achievement2Desc": "Recognized by Uttarakhand Tourism Department",
+      "achievement3Title": "5000+ Successful Treks",
+      "achievement3Desc": "Safe and memorable experiences delivered",
+      "achievement4Title": "98% Customer Satisfaction",
+      "achievement4Desc": "Consistently exceeding trekker expectations"
+    },
+    "cta": {
+      "title": "JOIN OUR NEXT EXPEDITION",
+      "subtitle": "Be part of our growing community of Himalayan trekkers. Your adventure begins with a single step.",
+      "bookACall": "BOOK A CALL"
+    }
+  },
+  "treks": {
+    "hero": {
+      "superTitle": "UTTARAKHAND HIMALAYAS",
+      "title": "TREKS WE COVER",
+      "subtitle": "Curated Himalayan Expeditions Across Uttarakhand"
+    },
+    "filters": {
+      "all": "ALL",
+      "easy": "EASY",
+      "moderate": "MODERATE",
+      "difficult": "DIFFICULT"
+    },
+    "grid": {
+      "exploreTrek": "EXPLORE TREK",
+      "bookNow": "BOOK NOW"
+    },
+    "cta": {
+      "title": "READY FOR YOUR NEXT ADVENTURE?",
+      "subtitle": "Not sure which trek is right for you? Our experts are here to help you choose.",
+      "bookACall": "BOOK A CALL"
+    }
+  },
+  "trekDetail": {
+    "notFound": {
+      "title": "Trek Not Found",
+      "backButton": "BACK TO TREKS"
+    },
+    "hero": {
+      "backButton": "BACK TO TREKS"
+    },
+    "overview": {
+      "superTitle": "ABOUT THIS TREK",
+      "title": "OVERVIEW",
+      "highlightsTitle": "HIGHLIGHTS",
+      "galleryTitle": "GALLERY"
+    },
+    "sidebar": {
+      "startingFrom": "STARTING FROM",
+      "perPerson": "per person",
+      "startPoint": "START POINT",
+      "endPoint": "END POINT",
+      "totalDistance": "TOTAL DISTANCE",
+      "maxAltitude": "MAX ALTITUDE",
+      "duration": "DURATION",
+      "difficulty": "DIFFICULTY",
+      "ageLimit": "AGE LIMIT",
+      "groupSize": "GROUP SIZE",
+      "bestSeason": "BEST SEASON",
+      "location": "LOCATION",
+      "bookButton": "BOOK THIS TREK"
+    },
+    "itinerary": {
+      "superTitle": "DAY BY DAY",
+      "title": "ITINERARY",
+      "keyDay": "KEY DAY",
+      "distance": "DISTANCE",
+      "duration": "DURATION"
+    },
+    "routeDetails": {
+      "superTitle": "REGION DETAILS",
+      "title": "ROUTE, CULTURE & PEAKS",
+      "campsitesTitle": "Campsites and Altitude",
+      "cultureTitle": "Local Culture",
+      "peaksTitle": "Major Peaks on the Trail"
+    },
+    "cost": {
+      "superTitle": "WHAT'S INCLUDED",
+      "title": "COST & INCLUSIONS",
+      "costTitle": "TREK COST",
+      "inclusive": "All inclusive trek package",
+      "noHiddenCharges": "No hidden charges",
+      "groupDiscounts": "Group discounts available",
+      "bookButton": "BOOK NOW",
+      "includedTitle": "INCLUDED",
+      "notIncludedTitle": "NOT INCLUDED"
+    },
+    "flora": {
+      "superTitle": "MOUNTAIN ECOSYSTEM",
+      "title": "FLORA & FAUNA",
+      "treesTitle": "Trees Found on the Trek",
+      "wildlifeTitle": "Wildlife Sightings",
+      "summaryTitle": "CLOSING SUMMARY"
+    },
+    "related": {
+      "superTitle": "MORE ADVENTURES",
+      "title": "RELATED TREKS"
+    },
+    "cta": {
+      "title": "READY TO TREK {{trekName}}?",
+      "subtitle": "Secure your spot on this incredible trek. Our team will guide you through every step of the booking process.",
+      "bookButton": "BOOK THIS TREK",
+      "exploreButton": "EXPLORE OTHER TREKS"
+    }
+  },
+  "gallery": {
+    "hero": {
+      "title": "GALLERY",
+      "subtitle": "Moments from the Himalayas"
+    },
+    "filters": {
+      "all": "ALL",
+      "mountains": "MOUNTAINS",
+      "camping": "CAMPING",
+      "snow": "SNOW",
+      "forest": "FOREST",
+      "lakes": "LAKES",
+      "sunrise": "SUNRISE",
+      "trekkers": "TREKKERS"
+    }
+  },
+  "testimonials": {
+    "hero": {
+      "title": "TESTIMONIALS",
+      "subtitle": "Stories from our trekkers"
+    },
+    "stats": {
+      "averageRating": "AVERAGE RATING",
+      "reviews": "REVIEWS",
+      "recommend": "WOULD RECOMMEND",
+      "googleRating": "GOOGLE RATING"
+    },
+    "featured": {
+      "superTitle": "FEATURED STORY",
+      "title": "TREKKER EXPERIENCE"
+    },
+    "reviews": {
+      "superTitle": "WHAT TREKKERS SAY",
+      "title": "REVIEWS",
+      "review1": "An absolutely life-changing experience. The guides were professional and the views were breathtaking. I cannot recommend TREKWON enough!",
+      "review2": "I've trekked with many companies, but TREKWON stands out for their safety standards and attention to detail. Truly world-class experience.",
+      "review3": "The best birthday gift I could have given myself. The summit sunrise was magical and the team made everything so comfortable.",
+      "review4": "Perfect for beginners like me. Felt safe and supported throughout the entire trek. The guides were patient and encouraging.",
+      "review5": "The food was incredible for a mountain trek. Hot meals every day, and the team went out of their way to accommodate dietary preferences.",
+      "review6": "Professional, organized, and deeply passionate about the mountains. You can feel the love they have for what they do."
+    },
+    "trusted": {
+      "superTitle": "TRUSTED BY",
+      "google": "Google Reviews",
+      "tripadvisor": "TripAdvisor",
+      "uttarakhand": "Uttarakhand Tourism",
+      "adventure": "Adventure Travel"
+    }
+  },
+  "blog": {
+    "hero": {
+      "title": "BLOG",
+      "subtitle": "Trekking guides, tips & stories"
+    },
+    "search": {
+      "placeholder": "Search articles..."
+    },
+    "filters": {
+      "all": "ALL"
+    },
+    "featured": {
+      "superTitle": "FEATURED ARTICLE",
+      "readMore": "READ MORE"
+    },
+    "noArticles": "No articles found matching your criteria."
+  },
+  "faq": {
+    "hero": {
+      "title": "FAQ",
+      "subtitle": "Everything you need to know"
+    },
+    "search": {
+      "placeholder": "Search FAQs..."
+    },
+    "categories": {
+      "all": "ALL",
+      "general": "GENERAL",
+      "fitness": "FITNESS",
+      "safety": "SAFETY",
+      "weather": "WEATHER",
+      "permits": "PERMITS",
+      "packing": "PACKING"
+    },
+    "noFaqs": "No FAQs found matching your criteria.",
+    "cta": {
+      "title": "STILL HAVE QUESTIONS?",
+      "subtitle": "Our team is here to help. Reach out to us and we'll get back to you within 24 hours.",
+      "button": "CONTACT US"
+    },
+    "questions": {
+      "q1": "What is the best time for trekking in Uttarakhand?",
+      "a1": "The best trekking season in Uttarakhand depends on the specific trek. Summer (May-June) and post-monsoon (September-October) are ideal for most treks. Winter treks (December-March) like Brahmatal offer stunning snow experiences. The Valley of Flowers is best visited during July-September when the flowers are in full bloom.",
+      "q2": "Do I need prior trekking experience?",
+      "a2": "Not necessarily. We offer treks for all difficulty levels. Beginner-friendly treks like Kuari Pass and Brahmatal require no prior experience. Moderate treks like Valley of Flowers and GoMukh Tapovan are suitable for those with basic fitness. Only difficult treks like Roopkund require prior high-altitude trekking experience.",
+      "q3": "How do I book a trek?",
+      "a3": "You can book a trek through our website by visiting the specific trek page and clicking \"Book Now.\" Alternatively, you can book a free consultation call where our experts will guide you through the process, help you choose the right trek, and answer any questions you may have.",
+      "q4": "How should I prepare physically for a high-altitude trek?",
+      "a4": "We recommend starting your preparation at least 4-6 weeks before the trek. Focus on cardiovascular exercises like running, cycling, or swimming. Include strength training for legs and core. Practice walking uphill with a backpack. For treks above 14,000 ft, we provide a detailed fitness guide after booking.",
+      "q5": "What is the minimum age requirement?",
+      "a5": "The minimum age varies by trek. Easy treks like Kuari Pass and Brahmatal accept children aged 8+. Moderate treks require a minimum age of 12+, while difficult treks like Roopkund require participants to be at least 15 years old. There is no upper age limit as long as you are physically fit.",
+      "q6": "What safety measures do you follow?",
+      "a6": "Safety is our top priority. We maintain a 1:8 guide-to-trekker ratio, carry comprehensive medical kits and portable oxygen cylinders, use satellite communicators in remote areas, and have emergency evacuation plans in place. All our guides are certified in wilderness first aid and high-altitude rescue techniques.",
+      "q7": "Do you carry medical kits?",
+      "a7": "Yes, we carry extensive medical kits on every trek including basic first aid supplies, medications for altitude sickness (Diamox), pain relievers, anti-nausea medication, bandages, and more. For high-altitude treks, we also carry portable oxygen cylinders and pulse oximeters to monitor oxygen levels.",
+      "q8": "What kind of weather can I expect?",
+      "a8": "Mountain weather is unpredictable. Daytime temperatures at lower camps can range from 15-25°C in summer and 5-15°C in winter. At higher camps, temperatures can drop to -5°C to -15°C. We recommend layering your clothing and always carrying rain gear regardless of the season.",
+      "q9": "What happens if it rains or snows heavily?",
+      "a9": "We monitor weather conditions closely. In case of heavy rain or snow, we may modify the itinerary, wait for conditions to improve, or return to the previous camp for safety. Your trek leader will make the final decision based on ground conditions and weather forecasts.",
+      "q10": "Are trekking permits included?",
+      "a10": "Yes, all necessary trekking permits and forest entry fees are included in the trek cost. We handle all permit applications on your behalf. You only need to carry a valid government ID (Aadhaar card, passport, or driver's license) for verification at checkposts.",
+      "q11": "What should I pack for a Himalayan trek?",
+      "a11": "Essential items include: sturdy trekking shoes, layered clothing (base, insulation, shell), warm jacket, rain gear, backpack (40-60L), water bottles, sunglasses, sunscreen, headlamp, trekking poles, and personal toiletries. We provide a detailed packing list specific to your trek after booking.",
+      "q12": "Can I rent trekking gear?",
+      "a12": "Yes, we offer gear rental services for items like trekking poles, backpacks, jackets, and sleeping bags (if not included in the trek). Please inform us at least a week in advance if you need to rent gear. Quality and hygiene of rented equipment is thoroughly maintained."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "CONTACT US",
+      "subtitle": "We're here to help you plan your adventure"
+    },
+    "info": {
+      "superTitle": "GET IN TOUCH",
+      "title": "LET'S CONNECT",
+      "call": "CALL US",
+      "email": "EMAIL US",
+      "visit": "VISIT US",
+      "hours": "OFFICE HOURS",
+      "hoursValue": "Mon-Sat, 9AM - 7PM IST"
+    },
+    "social": {
+      "superTitle": "FOLLOW US"
+    },
+    "whatsapp": {
+      "superTitle": "QUICK CHAT",
+      "text": "Prefer WhatsApp? Message us directly for quick responses.",
+      "button": "CHAT ON WHATSAPP"
+    },
+    "form": {
+      "sent": {
+        "title": "MESSAGE SENT!",
+        "subtitle": "We'll get back to you within 24 hours."
+      },
+      "superTitle": "SEND US A MESSAGE",
+      "title": "CONTACT FORM",
+      "name": "NAME",
+      "namePlaceholder": "Your full name",
+      "email": "EMAIL",
+      "emailPlaceholder": "your@email.com",
+      "phone": "PHONE",
+      "phonePlaceholder": "+91 79069 19033",
+      "subject": "SUBJECT",
+      "message": "MESSAGE",
+      "messagePlaceholder": "Tell us about your query...",
+      "submit": "SEND MESSAGE",
+      "subjects": {
+        "general": "General Inquiry",
+        "booking": "Trek Booking",
+        "custom": "Custom Trek",
+        "partnership": "Partnership"
+      }
+    },
+    "map": {
+      "title": "DEHRADUN, UTTARAKHAND",
+      "address": "123 Mountain View Road, Dehradun - 248001"
+    }
+  },
+  "bookACall": {
+    "hero": {
+      "title": "BOOK A CALL",
+      "subtitle": "Free trek consultation with our experts"
+    },
+    "form": {
+      "thankYou": "THANK YOU!",
+      "received": "We've received your request. Our team will call you within 24 hours to discuss your trekking plans.",
+      "browse": "BROWSE TREKS",
+      "superTitle": "FREE CONSULTATION",
+      "title": "BOOK YOUR CALL",
+      "name": "FULL NAME *",
+      "namePlaceholder": "Enter your full name",
+      "phone": "PHONE NUMBER *",
+      "phonePlaceholder": "+91 98765 43210",
+      "email": "EMAIL ADDRESS *",
+      "emailPlaceholder": "your@email.com",
+      "trek": "PREFERRED TREK",
+      "selectTrek": "Select Trek",
+      "customTrek": "Custom Trek",
+      "date": "PREFERRED DATE *",
+      "groupSize": "GROUP SIZE",
+      "message": "MESSAGE",
+      "messagePlaceholder": "Tell us about your trekking experience and any special requirements...",
+      "submit": "BOOK FREE CONSULTATION"
+    },
+    "benefits": {
+      "superTitle": "WHY BOOK A CALL",
+      "title": "WHAT YOU GET",
+      "b1Title": "Personalized Trek Recommendation",
+      "b1Desc": "Our experts analyze your fitness level, experience, and preferences to recommend the perfect trek for you.",
+      "b2Title": "Detailed Itinerary Discussion",
+      "b2Desc": "Get a day-by-day breakdown of your trek, including what to expect at each campsite and viewpoint.",
+      "b3Title": "Packing & Preparation Guidance",
+      "b3Desc": "Receive a customized packing list and fitness preparation plan tailored to your specific trek.",
+      "b4Title": "Group Discount Information",
+      "b4Desc": "Learn about exclusive group booking benefits and early bird discounts for your trekking dates."
+    },
+    "obligation": {
+      "title": "NO OBLIGATION",
+      "desc": "This is a completely free consultation with no obligation to book. We're here to help you make an informed decision about your Himalayan adventure."
+    },
+    "process": {
+      "superTitle": "THE PROCESS",
+      "title": "WHAT HAPPENS NEXT",
+      "step1": "SUBMIT",
+      "step1Desc": "Fill the form above",
+      "step2": "SCHEDULE",
+      "step2Desc": "We call you within 24 hours",
+      "step3": "PLAN",
+      "step3Desc": "Get your personalized trek plan"
+    },
+    "cta": {
+      "title": "READY TO EXPLORE?",
+      "subtitle": "Browse our curated collection of Himalayan treks and find the perfect adventure for you.",
+      "button": "VIEW ALL TREKS"
+    }
+  },
+  "footer": {
+    "description": "Premium guided trekking experiences across the Indian Himalayas. Safe, sustainable, and unforgettable adventures since 2014.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About Us",
+    "gallery": "Gallery",
+    "testimonials": "Testimonials",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "bookACall": "Book A Call",
+    "ourTreks": "Our Treks",
+    "contactUs": "Contact Us",
+    "copyright": "© {{year}} TREKWON. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cancellation": "Cancellation Policy"
+  }
+}

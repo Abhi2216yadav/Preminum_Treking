@@ -1,68 +1,77 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Search, ArrowRight, Calendar } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 
 export default function Blog() {
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('ALL');
 
-  const categories = ['ALL', 'PACKING GUIDES', 'FITNESS', 'SAFETY', 'DESTINATIONS', 'PHOTOGRAPHY'];
+  const categories = [
+    { key: 'ALL', label: t('blog.filters.all') },
+    { key: 'PACKING GUIDES', label: t('home.blog.categoryPacking') },
+    { key: 'FITNESS', label: t('home.blog.categoryFitness') },
+    { key: 'SAFETY', label: t('home.blog.categorySafety') },
+    { key: 'DESTINATIONS', label: t('home.blog.categoryDestinations') },
+    { key: 'PHOTOGRAPHY', label: t('home.blog.categoryPhotography') },
+  ];
 
   const posts = [
     {
-      title: 'The Ultimate Guide to High Altitude Trekking Preparation',
+      title: t('home.blog.post1Title'),
       category: 'FITNESS',
       image: '/blog-fitness.jpg',
       date: 'June 10, 2026',
-      excerpt: 'Preparing for a high-altitude trek requires more than just enthusiasm. Learn the essential fitness routines, acclimatization strategies, and mental preparation techniques.',
+      excerpt: t('home.blog.post1Excerpt'),
       featured: true,
     },
     {
-      title: '10 Essential Items for Your Trekking Backpack',
+      title: t('home.blog.post2Title'),
       category: 'PACKING GUIDES',
       image: '/blog-packing.jpg',
       date: 'June 5, 2026',
-      excerpt: 'A well-packed backpack can make or break your trekking experience. Here are the 10 must-have items every Himalayan trekker should carry.',
+      excerpt: t('home.blog.post2Excerpt'),
       featured: false,
     },
     {
-      title: 'How to Prevent Altitude Sickness: A Complete Guide',
+      title: t('home.blog.post4Title'),
       category: 'SAFETY',
       image: '/hero-mountain.jpg',
       date: 'June 1, 2026',
-      excerpt: 'Altitude sickness can affect anyone regardless of fitness level. Learn the symptoms, prevention strategies, and treatment options for a safe trek.',
+      excerpt: t('home.blog.post4Excerpt'),
       featured: false,
     },
     {
-      title: 'Best Time to Visit Valley of Flowers',
+      title: t('home.blog.post3Title'),
       category: 'DESTINATIONS',
       image: '/trek-valley-flowers new.jpeg',
       date: 'May 28, 2026',
-      excerpt: 'Timing is everything for the Valley of Flowers. Discover the optimal months to witness this UNESCO World Heritage Site in full bloom.',
+      excerpt: t('home.blog.post3Excerpt'),
       featured: false,
     },
     {
-      title: 'Trekking Photography: Capturing the Himalayas',
+      title: t('home.blog.post5Title'),
       category: 'PHOTOGRAPHY',
       image: '/gallery-sunrise.jpg',
       date: 'May 20, 2026',
-      excerpt: 'Master the art of Himalayan landscape photography. From golden hour tips to gear recommendations for high-altitude conditions.',
+      excerpt: t('home.blog.post5Excerpt'),
       featured: false,
     },
     {
-      title: 'Fitness Routine for Himalayan Treks',
+      title: t('home.blog.post6Title'),
       category: 'FITNESS',
       image: '/blog-fitness.jpg',
       date: 'May 15, 2026',
-      excerpt: 'A 4-week training plan designed specifically for Himalayan treks. Build stamina, strength, and endurance for high-altitude adventures.',
+      excerpt: t('home.blog.post6Excerpt'),
       featured: false,
     },
     {
-      title: 'Roopkund: The Mystery Lake Trek Explained',
+      title: t('home.blog.post7Title'),
       category: 'DESTINATIONS',
       image: '/trek-roopkund.jpg',
       date: 'May 8, 2026',
-      excerpt: 'Uncover the fascinating history and mystery behind the Skeleton Lake of Roopkund. A comprehensive guide to this unique trek.',
+      excerpt: t('home.blog.post7Excerpt'),
       featured: false,
     },
   ];
@@ -87,9 +96,9 @@ export default function Blog() {
         <div className="relative z-10 text-center section-padding">
           <ScrollReveal>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight uppercase mb-4">
-              BLOG
+              {t('blog.hero.title')}
             </h1>
-            <p className="text-lg text-[#9a9a9a]">Trekking guides, tips & stories</p>
+            <p className="text-lg text-[#9a9a9a]">{t('blog.hero.subtitle')}</p>
           </ScrollReveal>
         </div>
       </section>
@@ -103,7 +112,7 @@ export default function Blog() {
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9a9a9a]" />
                 <input
                   type="text"
-                  placeholder="Search articles..."
+                  placeholder={t('blog.search.placeholder')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full bg-[#121212] border border-white/20 pl-12 pr-4 py-3 text-sm text-white placeholder:text-[#9a9a9a] focus:outline-none focus:border-[#d79a63]"
@@ -113,15 +122,15 @@ export default function Blog() {
             <div className="flex flex-wrap gap-2">
               {categories.map((cat) => (
                 <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
+                  key={cat.key}
+                  onClick={() => setActiveCategory(cat.key)}
                   className={`px-4 py-2 text-xs uppercase tracking-widest border transition-all ${
-                    activeCategory === cat
+                    activeCategory === cat.key
                       ? 'bg-[#d79a63] text-[#030303] border-[#d79a63]'
                       : 'bg-transparent text-[#9a9a9a] border-white/20 hover:border-white/40 hover:text-white'
                   }`}
                 >
-                  {cat}
+                  {cat.label}
                 </button>
               ))}
             </div>
@@ -134,7 +143,7 @@ export default function Blog() {
         <section className="py-16 bg-[#030303] border-b border-white/10">
           <div className="section-padding">
             <ScrollReveal>
-              <div className="text-micro mb-4">FEATURED ARTICLE</div>
+              <div className="text-micro mb-4">{t('blog.featured.superTitle')}</div>
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
                 <div className="lg:col-span-3 overflow-hidden">
                   <img
@@ -144,7 +153,7 @@ export default function Blog() {
                   />
                 </div>
                 <div className="lg:col-span-2 flex flex-col justify-center">
-                  <div className="text-micro mb-2">{featuredPost.category}</div>
+                  <div className="text-micro mb-2">{t(`home.blog.category${featuredPost.category.split(' ')[0]}` as const)}</div>
                   <h2 className="text-2xl md:text-3xl font-normal tracking-tight mb-4">
                     {featuredPost.title}
                   </h2>
@@ -156,7 +165,7 @@ export default function Blog() {
                     <span className="text-micro">{featuredPost.date}</span>
                   </div>
                   <button className="btn-outline text-xs w-fit flex items-center gap-2">
-                    READ MORE <ArrowRight className="w-4 h-4" />
+                    {t('blog.featured.readMore')} <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
               </div>
@@ -180,7 +189,7 @@ export default function Blog() {
                     />
                   </div>
                   <div className="p-6">
-                    <div className="text-micro mb-2">{post.category}</div>
+                    <div className="text-micro mb-2">{t(`home.blog.category${post.category.split(' ')[0]}` as const)}</div>
                     <h3 className="text-sm uppercase tracking-wider mb-3 group-hover:text-[#d79a63] transition-colors leading-relaxed">
                       {post.title}
                     </h3>
@@ -194,7 +203,7 @@ export default function Blog() {
 
           {filteredPosts.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-[#9a9a9a]">No articles found matching your criteria.</p>
+              <p className="text-[#9a9a9a]">{t('blog.noArticles')}</p>
             </div>
           )}
         </div>
@@ -205,19 +214,19 @@ export default function Blog() {
         <div className="section-padding text-center">
           <ScrollReveal>
             <h3 className="text-2xl md:text-3xl uppercase tracking-tight mb-4">
-              GET TREKKING TIPS IN YOUR INBOX
+              {t('home.newsletter.title')}
             </h3>
             <p className="text-[#9a9a9a] mb-8 max-w-md mx-auto">
-              Subscribe for exclusive trekking guides, preparation tips, and early access to new trek announcements.
+              {t('home.newsletter.subtitle')}
             </p>
             <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t('home.newsletter.placeholder')}
                 className="flex-1 bg-[#030303] border border-white/20 px-4 py-3 text-sm text-white placeholder:text-[#9a9a9a] focus:outline-none focus:border-[#d79a63]"
               />
               <button type="submit" className="btn-amber">
-                SUBSCRIBE
+                {t('home.newsletter.subscribe')}
               </button>
             </form>
           </ScrollReveal>

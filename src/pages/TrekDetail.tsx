@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   ArrowLeft, Check, X, Star, Calendar,
   Users, Mountain, Clock, MapPin, TrendingUp
@@ -8,6 +9,7 @@ import { getTrekBySlug, getRelatedTreks } from '../data/treks';
 import ScrollReveal from '../components/ScrollReveal';
 
 export default function TrekDetail() {
+  const { t } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const trek = getTrekBySlug(slug || '');
@@ -17,8 +19,8 @@ export default function TrekDetail() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#030303]">
         <div className="text-center">
-          <h1 className="text-2xl uppercase tracking-wider mb-4">Trek Not Found</h1>
-          <Link to="/treks" className="btn-amber text-xs">BACK TO TREKS</Link>
+          <h1 className="text-2xl uppercase tracking-wider mb-4">{t('trekDetail.notFound.title')}</h1>
+          <Link to="/treks" className="btn-amber text-xs">{t('trekDetail.notFound.backButton')}</Link>
         </div>
       </div>
     );
@@ -43,7 +45,7 @@ export default function TrekDetail() {
               onClick={() => navigate('/treks')}
               className="flex items-center gap-2 text-micro mb-6 hover:text-[#d79a63] transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" /> BACK TO TREKS
+              <ArrowLeft className="w-4 h-4" /> {t('trekDetail.hero.backButton')}
             </button>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-normal tracking-tight uppercase mb-6">
               {trek.shortName}
@@ -77,9 +79,9 @@ export default function TrekDetail() {
             {/* Overview */}
             <div className="lg:col-span-3">
               <ScrollReveal>
-                <div className="text-micro mb-4">ABOUT THIS TREK</div>
+                <div className="text-micro mb-4">{t('trekDetail.overview.superTitle')}</div>
                 <h2 className="text-3xl md:text-4xl font-normal tracking-tight mb-8">
-                  OVERVIEW
+                  {t('trekDetail.overview.title')}
                 </h2>
                 <div className="mb-8 space-y-5">
                   {overviewParagraphs.map((paragraph, i) => (
@@ -91,7 +93,7 @@ export default function TrekDetail() {
 
                 {/* Highlights */}
                 <div className="mb-8">
-                  <h3 className="text-sm uppercase tracking-wider mb-4">HIGHLIGHTS</h3>
+                  <h3 className="text-sm uppercase tracking-wider mb-4">{t('trekDetail.overview.highlightsTitle')}</h3>
                   <ul className="space-y-3">
                     {trek.highlights.map((h, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm text-[#9a9a9a]">
@@ -105,7 +107,7 @@ export default function TrekDetail() {
 
               {/* Gallery Strip */}
               <ScrollReveal>
-                <h3 className="text-sm uppercase tracking-wider mb-4">GALLERY</h3>
+                <h3 className="text-sm uppercase tracking-wider mb-4">{t('trekDetail.overview.galleryTitle')}</h3>
                 <div className="flex gap-2 overflow-x-auto pb-4 scrollbar-hide">
                   {trek.gallery.map((img, i) => (
                     <button
@@ -134,24 +136,24 @@ export default function TrekDetail() {
               <ScrollReveal delay={0.2}>
                 <div className="bg-[#121212] border border-white/10 sticky top-24">
                   <div className="p-6 border-b border-white/10">
-                    <div className="text-micro mb-2">STARTING FROM</div>
+                    <div className="text-micro mb-2">{t('trekDetail.sidebar.startingFrom')}</div>
                     <div className="text-3xl text-[#d79a63] font-mono">
                       ₹{trek.price.toLocaleString('en-IN')}
                     </div>
-                    <div className="text-micro">per person</div>
+                    <div className="text-micro">{t('trekDetail.sidebar.perPerson')}</div>
                   </div>
                   <div className="p-6 space-y-4">
                     {[
-                      { label: 'START POINT', value: trek.startPoint, icon: MapPin },
-                      { label: 'END POINT', value: trek.endPoint, icon: MapPin },
-                      { label: 'TOTAL DISTANCE', value: trek.totalDistance, icon: TrendingUp },
-                      { label: 'MAX ALTITUDE', value: trek.altitude, icon: Mountain },
-                      { label: 'DURATION', value: trek.duration, icon: Clock },
-                      { label: 'DIFFICULTY', value: trek.difficulty, icon: TrendingUp },
-                      { label: 'AGE LIMIT', value: trek.ageLimit, icon: Users },
-                      { label: 'GROUP SIZE', value: trek.groupSize, icon: Users },
-                      { label: 'BEST SEASON', value: trek.bestSeason, icon: Calendar },
-                      { label: 'LOCATION', value: trek.location, icon: MapPin },
+                      { label: t('trekDetail.sidebar.startPoint'), value: trek.startPoint, icon: MapPin },
+                      { label: t('trekDetail.sidebar.endPoint'), value: trek.endPoint, icon: MapPin },
+                      { label: t('trekDetail.sidebar.totalDistance'), value: trek.totalDistance, icon: TrendingUp },
+                      { label: t('trekDetail.sidebar.maxAltitude'), value: trek.altitude, icon: Mountain },
+                      { label: t('trekDetail.sidebar.duration'), value: trek.duration, icon: Clock },
+                      { label: t('trekDetail.sidebar.difficulty'), value: trek.difficulty, icon: TrendingUp },
+                      { label: t('trekDetail.sidebar.ageLimit'), value: trek.ageLimit, icon: Users },
+                      { label: t('trekDetail.sidebar.groupSize'), value: trek.groupSize, icon: Users },
+                      { label: t('trekDetail.sidebar.bestSeason'), value: trek.bestSeason, icon: Calendar },
+                      { label: t('trekDetail.sidebar.location'), value: trek.location, icon: MapPin },
                     ].map((item) => (
                       <div key={item.label} className="flex items-start gap-3">
                         <item.icon className="w-4 h-4 text-[#d79a63] mt-0.5 shrink-0" />
@@ -164,7 +166,7 @@ export default function TrekDetail() {
                   </div>
                   <div className="p-6 border-t border-white/10">
                     <Link to="/book-a-call" className="btn-amber w-full text-center block">
-                      BOOK THIS TREK
+                      {t('trekDetail.sidebar.bookButton')}
                     </Link>
                   </div>
                 </div>
@@ -178,9 +180,9 @@ export default function TrekDetail() {
       <section className="py-24 bg-[#030303] border-t border-white/10">
         <div className="section-padding">
           <ScrollReveal>
-            <div className="text-micro mb-4">DAY BY DAY</div>
+            <div className="text-micro mb-4">{t('trekDetail.itinerary.superTitle')}</div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight mb-16">
-              ITINERARY
+              {t('trekDetail.itinerary.title')}
             </h2>
           </ScrollReveal>
 
@@ -209,7 +211,7 @@ export default function TrekDetail() {
                         <h3 className="text-lg uppercase tracking-wider">{day.title}</h3>
                         {day.highlight && (
                           <span className="bg-[#d79a63]/20 text-[#d79a63] px-2 py-0.5 text-xs uppercase">
-                            KEY DAY
+                            {t('trekDetail.itinerary.keyDay')}
                           </span>
                         )}
                       </div>
@@ -220,13 +222,13 @@ export default function TrekDetail() {
                         <div className="mt-4 flex flex-wrap gap-3">
                           {day.distance && (
                             <div className="border border-white/10 px-3 py-2">
-                              <div className="text-micro">DISTANCE</div>
+                              <div className="text-micro">{t('trekDetail.itinerary.distance')}</div>
                               <div className="text-sm text-white">{day.distance}</div>
                             </div>
                           )}
                           {day.duration && (
                             <div className="border border-white/10 px-3 py-2">
-                              <div className="text-micro">DURATION</div>
+                              <div className="text-micro">{t('trekDetail.itinerary.duration')}</div>
                               <div className="text-sm text-white">{day.duration}</div>
                             </div>
                           )}
@@ -246,9 +248,9 @@ export default function TrekDetail() {
         <section className="py-24 bg-[#030303] border-t border-white/10">
           <div className="section-padding">
             <ScrollReveal>
-              <div className="text-micro mb-4">REGION DETAILS</div>
+              <div className="text-micro mb-4">{t('trekDetail.routeDetails.superTitle')}</div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight mb-16">
-                ROUTE, CULTURE & PEAKS
+                {t('trekDetail.routeDetails.title')}
               </h2>
             </ScrollReveal>
 
@@ -257,7 +259,7 @@ export default function TrekDetail() {
                 <ScrollReveal>
                   <div className="bg-[#121212] border border-white/10 p-8 h-full">
                     <h3 className="text-sm uppercase tracking-wider mb-6">
-                      Campsites and Altitude
+                      {t('trekDetail.routeDetails.campsitesTitle')}
                     </h3>
                     <div className="divide-y divide-white/10">
                       {trek.altitudeProfile.map((point) => (
@@ -277,7 +279,7 @@ export default function TrekDetail() {
                 <ScrollReveal delay={0.1}>
                   <div className="bg-[#121212] border border-white/10 p-8 h-full">
                     <h3 className="text-sm uppercase tracking-wider mb-6">
-                      Local Culture
+                      {t('trekDetail.routeDetails.cultureTitle')}
                     </h3>
                     <ul className="space-y-3">
                       {trek.localCulture.map((item, i) => (
@@ -295,7 +297,7 @@ export default function TrekDetail() {
                 <ScrollReveal delay={0.2}>
                   <div className="bg-[#121212] border border-white/10 p-8 h-full">
                     <h3 className="text-sm uppercase tracking-wider mb-6">
-                      Major Peaks on the Trail
+                      {t('trekDetail.routeDetails.peaksTitle')}
                     </h3>
                     <ul className="space-y-3">
                       {trek.majorPeaks.map((peak) => (
@@ -317,9 +319,9 @@ export default function TrekDetail() {
       <section className="py-24 bg-[#030303] border-t border-white/10">
         <div className="section-padding">
           <ScrollReveal>
-            <div className="text-micro mb-4">WHAT'S INCLUDED</div>
+            <div className="text-micro mb-4">{t('trekDetail.cost.superTitle')}</div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight mb-16">
-              COST & INCLUSIONS
+              {t('trekDetail.cost.title')}
             </h2>
           </ScrollReveal>
 
@@ -327,24 +329,24 @@ export default function TrekDetail() {
             {/* Price Card */}
             <ScrollReveal>
               <div className="bg-[#121212] border border-white/10 p-8">
-                <div className="text-micro mb-4">TREK COST</div>
+                <div className="text-micro mb-4">{t('trekDetail.cost.costTitle')}</div>
                 <div className="text-5xl text-[#d79a63] font-mono mb-2">
                   ₹{trek.price.toLocaleString('en-IN')}
                 </div>
-                <div className="text-micro mb-8">per person</div>
+                <div className="text-micro mb-8">{t('trekDetail.sidebar.perPerson')}</div>
                 <div className="space-y-3 mb-8">
                   <div className="flex items-center gap-2 text-sm text-[#9a9a9a]">
-                    <Check className="w-4 h-4 text-green-500" /> All inclusive trek package
+                    <Check className="w-4 h-4 text-green-500" /> {t('trekDetail.cost.inclusive')}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-[#9a9a9a]">
-                    <Check className="w-4 h-4 text-green-500" /> No hidden charges
+                    <Check className="w-4 h-4 text-green-500" /> {t('trekDetail.cost.noHiddenCharges')}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-[#9a9a9a]">
-                    <Check className="w-4 h-4 text-green-500" /> Group discounts available
+                    <Check className="w-4 h-4 text-green-500" /> {t('trekDetail.cost.groupDiscounts')}
                   </div>
                 </div>
                 <Link to="/book-a-call" className="btn-amber w-full text-center block">
-                  BOOK NOW
+                  {t('trekDetail.cost.bookButton')}
                 </Link>
               </div>
             </ScrollReveal>
@@ -353,7 +355,7 @@ export default function TrekDetail() {
             <ScrollReveal delay={0.1}>
               <div className="bg-[#121212] border border-white/10 p-8">
                 <h3 className="text-sm uppercase tracking-wider mb-6 flex items-center gap-2">
-                  <Check className="w-4 h-4 text-green-500" /> INCLUDED
+                  <Check className="w-4 h-4 text-green-500" /> {t('trekDetail.cost.includedTitle')}
                 </h3>
                 <ul className="space-y-3">
                   {trek.included.map((item, i) => (
@@ -370,7 +372,7 @@ export default function TrekDetail() {
             <ScrollReveal delay={0.2}>
               <div className="bg-[#121212] border border-white/10 p-8">
                 <h3 className="text-sm uppercase tracking-wider mb-6 flex items-center gap-2">
-                  <X className="w-4 h-4 text-red-500" /> NOT INCLUDED
+                  <X className="w-4 h-4 text-red-500" /> {t('trekDetail.cost.notIncludedTitle')}
                 </h3>
                 <ul className="space-y-3">
                   {trek.excluded.map((item, i) => (
@@ -391,9 +393,9 @@ export default function TrekDetail() {
         <section className="py-24 bg-[#030303] border-t border-white/10">
           <div className="section-padding">
             <ScrollReveal>
-              <div className="text-micro mb-4">MOUNTAIN ECOSYSTEM</div>
+              <div className="text-micro mb-4">{t('trekDetail.flora.superTitle')}</div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight mb-16">
-                FLORA & FAUNA
+                {t('trekDetail.flora.title')}
               </h2>
             </ScrollReveal>
 
@@ -402,7 +404,7 @@ export default function TrekDetail() {
                 <ScrollReveal>
                   <div className="bg-[#121212] border border-white/10 p-8 h-full">
                     <h3 className="text-sm uppercase tracking-wider mb-6">
-                      Trees Found on the Trek
+                      {t('trekDetail.flora.treesTitle')}
                     </h3>
                     <ul className="space-y-3">
                       {trek.floraFauna.trees.map((tree, i) => (
@@ -418,7 +420,7 @@ export default function TrekDetail() {
                 <ScrollReveal delay={0.1}>
                   <div className="bg-[#121212] border border-white/10 p-8 h-full">
                     <h3 className="text-sm uppercase tracking-wider mb-6">
-                      Wildlife Sightings
+                      {t('trekDetail.flora.wildlifeTitle')}
                     </h3>
                     <ul className="space-y-3">
                       {trek.floraFauna.wildlife.map((wildlife, i) => (
@@ -436,7 +438,7 @@ export default function TrekDetail() {
             {trek.closingSummary && (
               <ScrollReveal>
                 <div className="bg-[#121212] border border-white/10 p-8">
-                  <div className="text-micro mb-4">CLOSING SUMMARY</div>
+                  <div className="text-micro mb-4">{t('trekDetail.flora.summaryTitle')}</div>
                   <p className="text-[#9a9a9a] leading-relaxed max-w-4xl">
                     {trek.closingSummary}
                   </p>
@@ -451,9 +453,9 @@ export default function TrekDetail() {
       <section className="py-24 bg-[#030303] border-t border-white/10">
         <div className="section-padding">
           <ScrollReveal>
-            <div className="text-micro mb-4">MORE ADVENTURES</div>
+            <div className="text-micro mb-4">{t('trekDetail.related.superTitle')}</div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight mb-16">
-              RELATED TREKS
+              {t('trekDetail.related.title')}
             </h2>
           </ScrollReveal>
 
@@ -492,17 +494,17 @@ export default function TrekDetail() {
         <div className="section-padding text-center">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl font-normal tracking-tight mb-6">
-              READY TO TREK {trek.shortName.toUpperCase()}?
+              {t('trekDetail.cta.title', { trekName: trek.shortName.toUpperCase() })}
             </h2>
             <p className="text-[#9a9a9a] max-w-xl mx-auto mb-10">
-              Secure your spot on this incredible trek. Our team will guide you through every step of the booking process.
+              {t('trekDetail.cta.subtitle')}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/book-a-call" className="btn-amber">
-                BOOK THIS TREK
+                {t('trekDetail.cta.bookButton')}
               </Link>
               <Link to="/treks" className="btn-outline">
-                EXPLORE OTHER TREKS
+                {t('trekDetail.cta.exploreButton')}
               </Link>
             </div>
           </ScrollReveal>

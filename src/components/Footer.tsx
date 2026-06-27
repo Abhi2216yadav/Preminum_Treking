@@ -1,17 +1,20 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Mountain, Instagram, Facebook, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 import { treks } from '../data/treks';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   const quickLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Testimonials', path: '/testimonials' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'FAQ', path: '/faq' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'Book A Call', path: '/book-a-call' },
+    { name: t('footer.home'), path: '/' },
+    { name: t('footer.about'), path: '/about' },
+    { name: t('footer.gallery'), path: '/gallery' },
+    { name: t('footer.testimonials'), path: '/testimonials' },
+    { name: t('footer.blog'), path: '/blog' },
+    { name: t('footer.faq'), path: '/faq' },
+    { name: t('footer.contact'), path: '/contact' },
+    { name: t('footer.bookACall'), path: '/book-a-call' },
   ];
 
   return (
@@ -26,8 +29,7 @@ export default function Footer() {
               <span className="text-xl font-medium tracking-tight">TREKWON</span>
             </Link>
             <p className="text-sm text-[#9a9a9a] leading-relaxed mb-6">
-              Premium guided trekking experiences across the Indian Himalayas. 
-              Safe, sustainable, and unforgettable adventures since 2014.
+              {t('footer.description')}
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-[#9a9a9a] hover:text-[#d79a63] transition-colors">
@@ -44,7 +46,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-white mb-6">Quick Links</h4>
+            <h4 className="text-xs uppercase tracking-widest text-white mb-6">{t('footer.quickLinks')}</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -61,7 +63,7 @@ export default function Footer() {
 
           {/* Treks */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-white mb-6">Our Treks</h4>
+            <h4 className="text-xs uppercase tracking-widest text-white mb-6">{t('footer.ourTreks')}</h4>
             <ul className="space-y-3">
               {treks.map((trek) => (
                 <li key={trek.id}>
@@ -78,7 +80,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-white mb-6">Contact Us</h4>
+            <h4 className="text-xs uppercase tracking-widest text-white mb-6">{t('footer.contactUs')}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-[#d79a63] mt-0.5" />
@@ -105,17 +107,17 @@ export default function Footer() {
       <div className="border-t border-white/10 section-padding py-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-[#9a9a9a]">
-            &copy; {new Date().getFullYear()} TREKWON. All rights reserved.
+            {t('footer.copyright', { year: new Date().getFullYear() })}
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-[#9a9a9a] hover:text-white transition-colors">
-              Privacy Policy
+              {t('footer.privacy')}
             </a>
             <a href="#" className="text-xs text-[#9a9a9a] hover:text-white transition-colors">
-              Terms of Service
+              {t('footer.terms')}
             </a>
             <a href="#" className="text-xs text-[#9a9a9a] hover:text-white transition-colors">
-              Cancellation Policy
+              {t('footer.cancellation')}
             </a>
           </div>
         </div>

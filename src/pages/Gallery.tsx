@@ -1,12 +1,23 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 
 export default function Gallery() {
+  const { t } = useTranslation();
   const [filter, setFilter] = useState('ALL');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const filters = ['ALL', 'MOUNTAINS', 'CAMPING', 'SNOW', 'FOREST', 'LAKES', 'SUNRISE', 'TREKKERS'];
+  const filters = [
+    { key: 'ALL', label: t('gallery.filters.all') },
+    { key: 'MOUNTAINS', label: t('gallery.filters.mountains') },
+    { key: 'CAMPING', label: t('gallery.filters.camping') },
+    { key: 'SNOW', label: t('gallery.filters.snow') },
+    { key: 'FOREST', label: t('gallery.filters.forest') },
+    { key: 'LAKES', label: t('gallery.filters.lakes') },
+    { key: 'SUNRISE', label: t('gallery.filters.sunrise') },
+    { key: 'TREKKERS', label: t('gallery.filters.trekkers') },
+  ];
 
   const images = [
     { src: '/hero-mountain.jpg', alt: 'Himalayan peaks', category: 'MOUNTAINS', span: 'col-span-2 row-span-2' },
@@ -26,7 +37,6 @@ export default function Gallery() {
     { src: '/trek-valley-flowers new11.jpeg', alt: 'Valley of Flowers panorama', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
     { src: '/gallery-summit.jpg', alt: 'Summit celebration', category: 'TREKKERS', span: 'col-span-2 row-span-1' },
     { src: '/trek-roopkund-new1.jpeg', alt: 'Roopkund Lake', category: 'LAKES', span: 'col-span-1 row-span-1' },
-    { src: '/trek-roopkund-new2.jpeg', alt: 'Snow trek', category: 'SNOW', span: 'col-span-2 row-span-1' },
     { src: '/trek-pangachula2.jpg', alt: 'Pangarchulla summit ridge', category: 'SNOW', span: 'col-span-2 row-span-1' },
     { src: '/trek-pangachula.jpg', alt: 'Pangarchulla campsite', category: 'CAMPING', span: 'col-span-1 row-span-1' },
     { src: '/trek-pangachula1.jpg', alt: 'Pangarchulla mountain views', category: 'MOUNTAINS', span: 'col-span-1 row-span-1' },
@@ -87,9 +97,9 @@ export default function Gallery() {
         <div className="relative z-10 text-center section-padding">
           <ScrollReveal>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight uppercase mb-4">
-              GALLERY
+              {t('gallery.hero.title')}
             </h1>
-            <p className="text-lg text-[#9a9a9a]">Moments from the Himalayas</p>
+            <p className="text-lg text-[#9a9a9a]">{t('gallery.hero.subtitle')}</p>
           </ScrollReveal>
         </div>
       </section>
@@ -100,15 +110,15 @@ export default function Gallery() {
           <div className="flex flex-wrap gap-2">
             {filters.map((f) => (
               <button
-                key={f}
-                onClick={() => { setFilter(f); setLightboxIndex(null); }}
+                key={f.key}
+                onClick={() => { setFilter(f.key); setLightboxIndex(null); }}
                 className={`px-4 py-2 text-xs uppercase tracking-widest border transition-all ${
-                  filter === f
+                  filter === f.key
                     ? 'bg-[#d79a63] text-[#030303] border-[#d79a63]'
                     : 'bg-transparent text-[#9a9a9a] border-white/20 hover:border-white/40 hover:text-white'
                 }`}
               >
-                {f}
+                {f.label}
               </button>
             ))}
           </div>
@@ -132,7 +142,7 @@ export default function Gallery() {
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
                   <span className="text-xs uppercase tracking-widest text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                    {img.category}
+                    {t(`gallery.filters.${img.category.toLowerCase()}` as const)}
                   </span>
                 </div>
               </div>
