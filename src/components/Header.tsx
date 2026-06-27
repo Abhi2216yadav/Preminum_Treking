@@ -117,24 +117,30 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Language Selector & CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
-            <LanguageSelector />
-            <Link
-              to="/book-a-call"
-              className="btn-amber text-xs"
-            >
-              {t('header.bookACall')}
-            </Link>
-          </div>
+          {/* Right-side items */}
+          <div className="flex items-center gap-4">
+            {/* Desktop Language Selector & CTA Button */}
+            <div className="hidden lg:flex items-center gap-4">
+              <LanguageSelector />
+              <Link
+                to="/book-a-call"
+                className="btn-amber text-xs"
+              >
+                {t('header.bookACall')}
+              </Link>
+            </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            {/* Mobile Language Selector & Menu Button */}
+            <div className="lg:hidden flex items-center gap-2">
+              <LanguageSelector />
+              <button
+                className="text-white"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
