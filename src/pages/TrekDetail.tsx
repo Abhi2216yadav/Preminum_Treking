@@ -25,7 +25,6 @@ export default function TrekDetail() {
       </div>
     );
   }
-
   const relatedTreks = getRelatedTreks(trek.slug, 3);
   const overviewParagraphs = Array.isArray(trek.overview) ? trek.overview : [trek.overview];
   const hasFloraFauna = trek.floraFauna || trek.closingSummary;
