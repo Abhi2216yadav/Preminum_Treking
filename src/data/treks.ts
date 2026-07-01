@@ -58,7 +58,6 @@ export const treks: Trek[] = [
     gallery: [
       '/trek-Gaumukh-Tapovan-new1.jpg',
       '/trek-Gaumukh-Tapovan-new2.jpg',
-      '/trek-Gaumukh-Tapovan-new3.jpg',
       '/trek-Gaumukh-Tapovan-new4.jpg',
       '/trek-Gaumukh-Tapovan-new5.jpg',
       '/trek-Gaumukh-Tapovan-new6.jpg',
@@ -260,9 +259,17 @@ export const treks: Trek[] = [
     image: '/trek-pangachula2.jpg',
     gallery: [
       '/trek-pangachula2.jpg',
+      '/trek-pangachula4.avif',
       '/trek-pangachula.jpg',
+      '/trek-pangachula11.webp',
+      '/trek-pangachula5.webp',
+      '/trek-pangachula6.avif',
+      '/trek-pangachula7.avif',
+      '/trek-pangachula8.avif',
+      '/trek-pangachula9.avif',
+      '/trek-pangachula10.avif',
       '/trek-pangachula1.jpg',
-      '/trek-pangachula3.jpg.jpg'
+      
     ],
     altitude: '15,060 ft',
     altitudeFt: 15060,
@@ -844,8 +851,11 @@ export const treks: Trek[] = [
     tagline: 'Weekend Summit Trek via Tungnath Temple',
     image: '/trek-chandrashila.jpg',
     gallery: [
+      '/trek-chandrashila10.jpg',
       '/trek-chandrashila.jpg',
+      '/trek-chandrashila9.png',
       '/trek-chandrashila3.jpg',
+      '/trek-chandrashila8.webp',
       '/trek-chandrashila4.jpg',
       '/trek-chandrashila7.jpg',
       '/trek-chandrashila5.jpg',
