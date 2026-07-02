@@ -259,6 +259,12 @@ export const treks: Trek[] = [
     image: '/trek-pangachula2.jpg',
     gallery: [
       '/trek-pangachula2.jpg',
+      '/trek-pangachula12.jpeg',
+      '/trek-pangachula13.jpeg',
+      '/trek-pangachula14.jpeg',
+      '/trek-pangachula15.jpeg',
+      '/trek-pangachula16.jpeg',
+      '/trek-pangachula17.jpeg',
       '/trek-pangachula4.avif',
       '/trek-pangachula.jpg',
       '/trek-pangachula11.webp',
