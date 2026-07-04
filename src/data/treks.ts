@@ -858,7 +858,12 @@ export const treks: Trek[] = [
     image: '/trek-chandrashila.jpg',
     gallery: [
       '/trek-chandrashila10.jpg',
+      '/trek-chandrashila14.jpeg',
       '/trek-chandrashila.jpg',
+      '/trek-chandrashila12.jpeg',
+      '/trek-chandrashila13.jpeg',
+      '/trek-chandrashila11.jpeg',
+      '/trek-chandrashila15.jpeg',
       '/trek-chandrashila9.png',
       '/trek-chandrashila3.jpg',
       '/trek-chandrashila8.webp',
