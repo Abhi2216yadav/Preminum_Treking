@@ -22,7 +22,8 @@ export default function Contact() {
 
   const contactInfo = [
     { icon: Phone, label: t('contact.info.call'), value: '+91 79069 19033' },
-    { icon: Mail, label: t('contact.info.email'), value: 'info@trekwon.com' },
+    { icon: Phone, label: t('contact.info.call'), value: '+91 87551 30029' },
+    { icon: Mail, label: t('contact.info.email'), value: 'mohansinghmohan619@gmail.com' },
     { icon: MapPin, label: t('contact.info.visit'), value: 'Dehradun, Uttarakhand, India' },
     { icon: Clock, label: t('contact.info.hours'), value: t('contact.info.hoursValue') },
   ];
